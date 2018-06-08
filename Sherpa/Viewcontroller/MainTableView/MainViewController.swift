@@ -39,10 +39,11 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
         
         print("클릭이 된다")
         
+        let firstView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Mainview") as! MainViewController
         let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
         
         
-        self.navigationController?.pushViewController(nextView, animated: true)
+        firstView.parent?.navigationController?.pushViewController(nextView, animated: true)
         
     }
 }

@@ -34,13 +34,11 @@ class MainHeaderTableViewCell: UITableViewCell {
 extension MainHeaderTableViewCell: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-      
-        let firstView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"Mainview") as! MainViewController
+        print("클릭이된다")
+        
+        
         let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
         
-        firstView.navigationController?.pushViewController(nextView, animated: true)
-       
-//        mainview.navigationController?.pushViewController(nextView, animated: true)
   
     }
     
