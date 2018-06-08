@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     override func viewDidLoad() {
         
-        
+        super.viewDidLoad()
         
         tableview.dataSource = self
         tableview.delegate = self
@@ -24,7 +24,7 @@ class MainViewController: UIViewController {
         let leftItem = UIBarButtonItem(customView: longTitle)
         self.navigationItem.leftBarButtonItem = leftItem
         
-        super.viewDidLoad()
+      
 
         // Do any additional setup after loading the view.
     }
@@ -39,11 +39,11 @@ extension MainViewController : UICollectionViewDelegateFlowLayout{
         
         print("클릭이 된다")
         
-        let firstView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Mainview") as! MainViewController
+
         let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
         
         
-        firstView.parent?.navigationController?.pushViewController(nextView, animated: true)
+        self.navigationController?.pushViewController(nextView, animated: true)
         
     }
 }
@@ -63,9 +63,6 @@ extension MainViewController: UICollectionViewDataSource{
     }
     
 }
-
-
-
 
 
 
@@ -105,8 +102,9 @@ extension MainViewController: UITableViewDataSource{
         if indexPath.section == 0 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MainHeaderCell") as! MainHeaderTableViewCell
-            
-            
+            cell.didSelectTableView = {[weak self] in let nextview = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
+                self?.navigationController?.pushViewController(nextview, animated: true)
+            }
             return cell
         }
         else {
