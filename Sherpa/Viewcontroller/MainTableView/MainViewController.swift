@@ -11,8 +11,10 @@ import UIKit
 class MainViewController: UIViewController {
 
     
-   let mainheaderview = MainHeaderTableViewCell()
+    let mainheaderview = MainHeaderTableViewCell()
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var micBtn: UIButton!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -29,6 +31,10 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func micAction(_ sender: Any) {
+        micBtn.isHidden = true
+        
+    }
     
 
 }

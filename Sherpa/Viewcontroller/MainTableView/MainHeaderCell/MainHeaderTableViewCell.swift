@@ -35,7 +35,6 @@ class MainHeaderTableViewCell: UITableViewCell {
 extension MainHeaderTableViewCell: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
         didSelectTableView?()
   
     }
