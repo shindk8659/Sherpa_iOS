@@ -196,6 +196,9 @@
                                     <constraint firstAttribute="width" secondItem="Jqj-2v-WCA" secondAttribute="height" multiplier="1:1" id="As1-Bk-pT1"/>
                                 </constraints>
                                 <state key="normal" image="micButton"/>
+                                <connections>
+                                    <action selector="micAction:" destination="bTA-7f-VLg" eventType="touchUpInside" id="E9g-eJ-eXn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -208,6 +211,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VjM-OC-srE"/>
                     <connections>
+                        <outlet property="micBtn" destination="Jqj-2v-WCA" id="IAb-Lo-yY7"/>
                         <outlet property="tableview" destination="2ey-bM-CJp" id="rpx-5y-2aX"/>
                     </connections>
                 </viewController>
@@ -270,6 +274,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOG-MK-ERX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1209" y="836"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OWg-t1-Y0r">
+            <objects>
+                <viewController id="NHV-zk-ujX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="erj-Hz-Mr5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ObF-Ii-x6E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbY-Fd-FAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
