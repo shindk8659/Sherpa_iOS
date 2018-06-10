@@ -13,6 +13,8 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        setTabBarHidden(false)
         // Do any additional setup after loading the view.
     }
 

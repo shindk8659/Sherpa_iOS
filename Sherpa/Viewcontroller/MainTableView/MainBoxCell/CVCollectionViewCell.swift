@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCVCollectionViewCell: UICollectionViewCell {
+class CVCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var row: UILabel!
 }
