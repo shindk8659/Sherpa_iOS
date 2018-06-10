@@ -8,12 +8,17 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController,UIGestureRecognizerDelegate {
 
     
     let mainheaderview = MainHeaderTableViewCell()
+    
+    var tablex :CGFloat = 0.0
+    var tabley :CGFloat = 0.0
+    
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var micBtn: UIButton!
+    @IBOutlet weak var cancelmicBtn: UIButton!
     
     override func viewDidLoad() {
         
@@ -21,55 +26,80 @@ class MainViewController: UIViewController {
         
         tableview.dataSource = self
         tableview.delegate = self
+        
+        //tableview 제스처 시 원래 화면으로 돌리기 
+        let tvGesture = UIPanGestureRecognizer(target: self, action: #selector(cancelmic))
+        tvGesture.delegate = self
+        self.tableview.addGestureRecognizer(tvGesture)
+        
+        
+        //네이게이션바 타이틀
         let longTitle = UIImageView()
         longTitle.image = #imageLiteral(resourceName: "naviLogo")
         let leftItem = UIBarButtonItem(customView: longTitle)
         self.navigationItem.leftBarButtonItem = leftItem
         
+        
+        
       
-
-        // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        cancelmic()
+    }
+    
+    // 제스처가 두개 일경우 둘다 허용하는 코드
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer)
+        -> Bool {
+            return true
+    }
+    
+    @objc func cancelmic(){
+        cancelmicBtn.isHidden = true
+        micBtn.isHidden = false
+        
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.tableview.frame.origin.y = 0
+        }, completion: nil)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        setTabBarHidden(false)
+        
+    }
+    
+    @IBAction func cancelmicAction(_ sender: Any) {
+        
+        cancelmic()
+      
+        
+    }
+    
+  
+    
     @IBAction func micAction(_ sender: Any) {
+        
+        cancelmicBtn.isHidden = false
         micBtn.isHidden = true
         
+        let xsize = tableview.frame.size.width
+        let ysize = tableview.frame.size.height
+        tablex = xsize
+        tabley = ysize
+    
+
+        
+        UIView.animate(withDuration: 0.2, animations: {
+                        self.tableview.frame.origin.y = -(ysize*0.39)
+        }, completion: nil)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        setTabBarHidden(true)
+
+        
     }
     
 
 }
-
-extension MainViewController : UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        
-        print("클릭이 된다")
-        
-
-        let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
-        
-        
-        self.navigationController?.pushViewController(nextView, animated: true)
-        
-    }
-}
-extension MainViewController: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 3
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BoxCell", for: indexPath) as! MainCVCollectionViewCell
-        
-        cell.backgroundColor = UIColor.blue
-        cell.row.text = String(indexPath.row)
-        return cell
-    }
-    
-}
-
 
 
 extension MainViewController: UITableViewDataSource{
@@ -85,7 +115,7 @@ extension MainViewController: UITableViewDataSource{
             return 1
         }
         else {
-            return 3
+            return 10
         }
         
     }
@@ -109,14 +139,22 @@ extension MainViewController: UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MainHeaderCell") as! MainHeaderTableViewCell
             cell.didSelectTableView = {[weak self] in let nextview = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
+                
                 self?.navigationController?.pushViewController(nextview, animated: true)
             }
+            
             return cell
         }
         else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
             cell.voiceRecodeLB.text = String(indexPath.row)
+            cell.didSelectCollectionView = {[weak self] in let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
+                
+                self?.navigationController?.pushViewController(nextView, animated: true)
+                
+            }
+            
             
             return  cell
             
@@ -130,9 +168,7 @@ extension MainViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    
-        
-        if tableView == mainheaderview.headertv{
+    if tableView == mainheaderview.headertv{
         
        
         let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
@@ -140,9 +176,7 @@ extension MainViewController : UITableViewDelegate{
         self.navigationController?.pushViewController(nextView, animated: true)
         
     }
-        else{
-            
-        }
+      
     
     
     
