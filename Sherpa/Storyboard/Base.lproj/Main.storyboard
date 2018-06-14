@@ -197,6 +197,13 @@
                                     <action selector="micAction:" destination="bTA-7f-VLg" eventType="touchUpInside" id="E9g-eJ-eXn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGh-p2-hpP">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Af-Q8-34b">
                                 <rect key="frame" x="334" y="582" width="22" height="22"/>
                                 <constraints>
@@ -223,6 +230,7 @@
                     <connections>
                         <outlet property="cancelmicBtn" destination="9Af-Q8-34b" id="UlH-K6-BGi"/>
                         <outlet property="micBtn" destination="Jqj-2v-WCA" id="IAb-Lo-yY7"/>
+                        <outlet property="micStringLB" destination="EGh-p2-hpP" id="mXl-SF-7vs"/>
                         <outlet property="tableview" destination="2ey-bM-CJp" id="rpx-5y-2aX"/>
                     </connections>
                 </viewController>
