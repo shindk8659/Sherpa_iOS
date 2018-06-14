@@ -12,13 +12,14 @@ class MainHeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headertv: UITableView!
     
+    var didSelectTableView: (() -> Void)?
     
     override func awakeFromNib() {
-        
+        super.awakeFromNib()
         headertv.delegate = self
         headertv.dataSource = self
    
-        super.awakeFromNib()
+       
         // Initialization code
     }
 
@@ -34,11 +35,7 @@ class MainHeaderTableViewCell: UITableViewCell {
 extension MainHeaderTableViewCell: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("클릭이된다")
-        
-        
-        let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
-        
+        didSelectTableView?()
   
     }
     

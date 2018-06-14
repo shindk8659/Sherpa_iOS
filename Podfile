@@ -11,6 +11,7 @@ target 'Sherpa' do
     pod 'SwiftyJSON'
     pod 'Kingfisher'
     pod 'Toast-Swift'
+    pod 'NVActivityIndicatorView'
 
 
 end

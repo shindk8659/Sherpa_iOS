@@ -10,9 +10,10 @@
 		2F838E7485E7B84D12974B6E /* Pods_Sherpa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */; };
 		521B80DB20C90489003F8833 /* RecommnedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DA20C90489003F8833 /* RecommnedViewController.swift */; };
 		521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DC20C938E2003F8833 /* MainViewController.swift */; };
+		5250773320CCD83C009EA147 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250773220CCD83C009EA147 /* extension.swift */; };
 		52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */; };
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
-		52AA2F4420C417E300BE1D31 /* MainCVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4320C417E300BE1D31 /* MainCVCollectionViewCell.swift */; };
+		52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */; };
 		52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */; };
 		52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7B20C67F00000B8489 /* InfoViewController.swift */; };
 		52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6D61A20C0210A00245C07 /* AppDelegate.swift */; };
@@ -24,9 +25,10 @@
 /* Begin PBXFileReference section */
 		521B80DA20C90489003F8833 /* RecommnedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommnedViewController.swift; sourceTree = "<group>"; };
 		521B80DC20C938E2003F8833 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5250773220CCD83C009EA147 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
-		52AA2F4320C417E300BE1D31 /* MainCVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVCollectionViewCell.swift; sourceTree = "<group>"; };
+		52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewCell.swift; sourceTree = "<group>"; };
 		52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		52E0CD7B20C67F00000B8489 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		52F6D61720C0210A00245C07 /* Sherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5250773120CCD82B009EA147 /* CustomExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5250773220CCD83C009EA147 /* extension.swift */,
+			);
+			path = CustomExtension;
+			sourceTree = "<group>";
+		};
 		527F260220C3F8E900F4ADB5 /* Viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */,
-				52AA2F4320C417E300BE1D31 /* MainCVCollectionViewCell.swift */,
+				52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */,
 			);
 			path = MainBoxCell;
 			sourceTree = "<group>";
@@ -130,6 +140,7 @@
 		52F6D61920C0210A00245C07 /* Sherpa */ = {
 			isa = PBXGroup;
 			children = (
+				5250773120CCD82B009EA147 /* CustomExtension */,
 				527F260420C3F93300F4ADB5 /* Support */,
 				527F260320C3F8F300F4ADB5 /* Storyboard */,
 				527F260220C3F8E900F4ADB5 /* Viewcontroller */,
@@ -233,6 +244,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -242,6 +254,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
@@ -279,7 +292,8 @@
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommnedViewController.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
-				52AA2F4420C417E300BE1D31 /* MainCVCollectionViewCell.swift in Sources */,
+				5250773320CCD83C009EA147 /* extension.swift in Sources */,
+				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
