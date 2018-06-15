@@ -10,7 +10,29 @@ import Foundation
 import UIKit
 import Kingfisher
 
-
+extension UITableView {
+    
+    func scrollToBottom() {
+        let rows = self.numberOfRows(inSection: 1)
+        
+        if rows > 0 {
+            DispatchQueue.main.async {
+                let indexPath = IndexPath(row: rows - 1, section: 1)
+                self.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            }
+        }
+    }
+    func scrollToTop() {
+        let rows = self.numberOfRows(inSection: 0)
+        
+        if rows > 0 {
+            DispatchQueue.main.async {
+                let indexPath = IndexPath(row: rows - 1, section: 0)
+                self.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        }
+    }
+}
 extension UIImage {
     
     /// Creates a circular outline image.
