@@ -25,6 +25,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireObjectMapper
     - Kingfisher
+    - NVActivityIndicatorView
     - ObjectMapper
     - SwiftyJSON
     - Toast-Swift

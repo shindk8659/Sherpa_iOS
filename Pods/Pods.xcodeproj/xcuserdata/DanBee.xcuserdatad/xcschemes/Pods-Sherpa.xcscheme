@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A2D7E9515269F0E3135505A10E1177B"
+               BlueprintIdentifier = "2F6A0A9CE0171E2B6633679955465455"
                BuildableName = "Pods_Sherpa.framework"
                BlueprintName = "Pods-Sherpa"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A2D7E9515269F0E3135505A10E1177B"
+            BlueprintIdentifier = "2F6A0A9CE0171E2B6633679955465455"
             BuildableName = "Pods_Sherpa.framework"
             BlueprintName = "Pods-Sherpa"
             ReferencedContainer = "container:Pods.xcodeproj">
