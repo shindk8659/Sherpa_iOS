@@ -20,6 +20,9 @@
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
 		52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */; };
+		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
+		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
+		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		8B0B0E74D6F6D9813D81EB24 /* Pods-Sherpa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.debug.xcconfig"; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
+		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		FFB8134820D3F7F000A51083 /* DetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListViewController.swift; sourceTree = "<group>"; };
+		FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMountainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,8 @@
 				52E0CD7820C67E35000B8489 /* MainTableView */,
 				52E0CD7B20C67F00000B8489 /* InfoViewController.swift */,
 				521B80DA20C90489003F8833 /* RecommnedViewController.swift */,
+				FFB8134820D3F7F000A51083 /* DetailListViewController.swift */,
+				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
 			);
 			path = Viewcontroller;
 			sourceTree = "<group>";
@@ -77,6 +85,7 @@
 			children = (
 				52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */,
 				52F6D61E20C0210A00245C07 /* Main.storyboard */,
+				FFB8134420D3905000A51083 /* Detail.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -193,7 +202,6 @@
 				52F6D61420C0210A00245C07 /* Frameworks */,
 				52F6D61520C0210A00245C07 /* Resources */,
 				1D727BD39D8411A0DC83299A /* [CP] Embed Pods Frameworks */,
-				9E390EE0232ABBFA2B975C8F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,6 +253,7 @@
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
 				52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */,
 				52F6D62020C0210A00245C07 /* Main.storyboard in Resources */,
+				FFB8134520D3905000A51083 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,21 +312,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E390EE0232ABBFA2B975C8F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -326,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
+				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommnedViewController.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
@@ -333,6 +328,7 @@
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
+				FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */,
 				52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
