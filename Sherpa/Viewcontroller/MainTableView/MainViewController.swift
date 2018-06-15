@@ -8,31 +8,40 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Realm
+import RealmSwift
 import Speech
 
-class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivityIndicatorViewable ,SFSpeechRecognizerDelegate{
+class SpeachStringresult: Object {
+    @objc dynamic var stringdata : String = ""
+}
 
+
+class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGestureRecognizerDelegate,NVActivityIndicatorViewable{
+
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
     
+ 
+    let realm = try! Realm()
     let mainheaderview = MainHeaderTableViewCell()
+    
     
     let activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20),
                                                                   type: NVActivityIndicatorType(rawValue: 23)!)
+    let micimg = UIImageView()
     // 마이크 애니메이션 액티비티 인디케이터 뷰
-    
+    var detectionTimer = Timer()
+    var detectionTimer2 = Timer()
     
     
     var tablex :CGFloat = 0.0
     var tabley :CGFloat = 0.0
+    var isListening: Bool = false
     
 
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
-    
-    
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
-    private let audioEngine = AVAudioEngine()
-
-    
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var micBtn: UIButton!
     @IBOutlet weak var cancelmicBtn: UIButton!
@@ -41,19 +50,25 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         speechRecognizer?.delegate = self
-       
+        
         self.view.addSubview(activityIndicatorView)
+        self.view.addSubview(micimg)
+        micimg.isHidden = true
+        
 
 
         tableview.dataSource = self
         tableview.delegate = self
         
+        tableview.scrollToBottom()
         
         micStringLB.isHidden = true
+        cancelmicBtn.isHidden = true
         
         //tableview 제스처 시 원래 화면으로 돌리기
-        let tvGesture = UIPanGestureRecognizer(target: self, action: #selector(cancelmic))
+        let tvGesture = UIPanGestureRecognizer(target: self, action: #selector(stopListening))
         tvGesture.delegate = self
         self.tableview.addGestureRecognizer(tvGesture)
         
@@ -63,21 +78,81 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
         longTitle.image = #imageLiteral(resourceName: "naviLogo")
         let leftItem = UIBarButtonItem(customView: longTitle)
         self.navigationItem.leftBarButtonItem = leftItem
+        longTitle.isUserInteractionEnabled = true
+        let taptitle = UITapGestureRecognizer(target: self, action: #selector(gototop))
+        longTitle.addGestureRecognizer(taptitle)
+        
+       
         
       
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        cancelmic()
+        stopListening()
+    }
+    
+    
+    
+    //Realm 데이터 저장
+    func addspeechData(string: String){
+        
+        let speechdata = SpeachStringresult()
+        speechdata.stringdata = string
+        
+        try! realm.write {
+            realm.add(speechdata)
+        }
+        print("저장")
+        print(speechdata)
+        
+        
     }
     // 마이크 레코딩
-    
-    func startRecording() {
+    func startListening() {
+        guard !isListening else {return}
+        isListening = true
         
-        if recognitionTask != nil {
-            recognitionTask?.cancel()
-            recognitionTask = nil
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = recognitionRequest else {
+            return
         }
+        
+        recognitionRequest.shouldReportPartialResults = true
+        
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error)  in
+            if self.audioEngine.isRunning{
+           
+            
+                if result != nil {
+                self.micStringLB.text = result?.bestTranscription.formattedString
+                self.micStringLB.sizeToFit()
+                
+            }
+           
+            let timer = self.detectionTimer
+            if !timer.isValid {
+                print("녹음타이머 가동중")
+                self.detectionTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (timer) in
+                    print("녹음타이머 끝")
+                   
+                    if self.micStringLB.text != "듣고있습니다:)"{
+                        self.addspeechData(string: self.gsno(self.micStringLB.text))
+                        
+                    }
+                    self.tableview.reloadData()
+                    self.tableview.scrollToBottom()
+                    timer.invalidate()
+                    self.stopListening()
+                    
+                    
+                    
+                })
+                }
+                
+            }
+
+        })
+        
         
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -85,46 +160,11 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
             try audioSession.setMode(AVAudioSessionModeMeasurement)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         } catch {
-            print("audioSession properties weren't set because of an error.")
+            print("오디오 세션이 정확히 준비되지않았다.")
         }
         
-        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        
-        let inputNode = audioEngine.inputNode
-        
-        guard let recognitionRequest = recognitionRequest else {
-            fatalError("SFSpeechAudioBufferRecognitionRequest() 요청되지않습니다.")
-        }
-        
-        recognitionRequest.shouldReportPartialResults = true
-        
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
-            
-            var isFinal = false
-            
-            if result != nil {
-                
-                self.micStringLB.text = result?.bestTranscription.formattedString
-                isFinal = (result?.isFinal)!
-                self.micStringLB.sizeToFit()
-                
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                    self.cancelmic()
-                }
-            }
-            
-            if error != nil || isFinal {
-                self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
-            
-            }
-        })
-        
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+        let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
+        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, time) in
             self.recognitionRequest?.append(buffer)
         }
         
@@ -132,20 +172,56 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
         
         do {
             try audioEngine.start()
+            self.micStringLB.text = "듣고있습니다:)"
         } catch {
-            print("에러입니다.")
+            print("오디오엔진 시작을 실패했습니다.")
         }
-        
-        micStringLB.text = "듣고있습니다 :)"
-        
     }
+    @objc func gototop(){
+        self.tableview.scrollToTop()
+    }
+    
+    @objc func stopListening() {
+        guard isListening else {return}
+        
+        micimg.isHidden = true
+        cancelmicBtn.isHidden = true
+        micBtn.isHidden = false
+        activityIndicatorView.stopAnimating()
+        micStringLB.isHidden = true
+        
+        //애니메이션 적용 해서 네비바와 탭바 생성 후 테이블뷰 내림
+        UIView.animate(withDuration: 0.2, animations: {
+            self.tableview.frame.origin.y = 0
+        }, completion: nil)
+        
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        setTabBarHidden(false)
+        
+        //오디오 관련 멈춤
+       
+        audioEngine.reset()
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+        // Indicate that the audio source is finished and no more audio will be appended
+        
+        recognitionRequest = nil
+        recognitionTask?.cancel()
+        recognitionTask = nil
+        recognitionRequest?.endAudio()
+        isListening = false
+    }
+    
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
             micBtn.isEnabled = true
+            
         } else {
             micBtn.isEnabled = false
         }
     }
+    
     
     // 제스처가 두개 일경우 둘다 허용하는 코드
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
@@ -154,33 +230,12 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
             return true
     }
   
-
-    
-    @objc func cancelmic(){
-        audioEngine.stop()// 레코딩 멈춤
-        recognitionRequest?.endAudio() //오디오를 끔
-    
-        
-        cancelmicBtn.isHidden = true
-        micBtn.isHidden = false
-        activityIndicatorView.stopAnimating()
-        micStringLB.text = ""
-        micStringLB.isHidden = true
-        
-        //애니메이션 적용 해서 네비바와 탭바 생성 후 테이블뷰 내림
-        UIView.animate(withDuration: 0.2, animations: {
-            self.tableview.frame.origin.y = 0
-        }, completion: nil)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        setTabBarHidden(false)
-        
-    }
     
     @IBAction func cancelmicAction(_ sender: Any) {
         
+   
+             stopListening()
         
-        cancelmic()
-      
         
     }
     
@@ -188,7 +243,14 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
     
     @IBAction func micAction(_ sender: Any) {
         
+        if audioEngine.isRunning == false{
+            
+            
+            
+        startListening()
+        
        
+            
         cancelmicBtn.isHidden = false
         micBtn.isHidden = true
         
@@ -197,18 +259,21 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
         let ysize = tableview.frame.size.height
         tablex = xsize
         tabley = ysize
-        
-        startRecording()// 레코딩 시작
-        
-        activityIndicatorView.color = UIColor.blue
-        activityIndicatorView.frame.size.width = 142
-        activityIndicatorView.frame.size.height = 142
+            
+        activityIndicatorView.color = UIColor(red:0.04, green:0.27, blue:0.24, alpha:1.0)
+        activityIndicatorView.frame.size.width = 170
+        activityIndicatorView.frame.size.height = 170
         activityIndicatorView.frame.origin.y = ysize - 200
-        activityIndicatorView.frame.origin.x = (xsize/2) - (142/2)
+        activityIndicatorView.frame.origin.x = (xsize/2) - (170/2)
         activityIndicatorView.startAnimating()
         
-        
-      
+        micimg.image = #imageLiteral(resourceName: "micButton")
+        micimg.frame.size.width = 97.6
+        micimg.frame.size.height = 97.6
+        micimg.center = activityIndicatorView.center
+        micimg.isHidden = false
+            
+       
         
         
         
@@ -216,7 +281,7 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
         UIView.animate(withDuration: 0.2, animations: {
                         self.tableview.frame.origin.y = -(ysize*0.39)
         }, completion: nil)
-        
+        self.tableview.scrollToBottom()
      
         navigationController?.setNavigationBarHidden(true, animated: true)
         setTabBarHidden(true)
@@ -225,7 +290,7 @@ class MainViewController: UIViewController,UIGestureRecognizerDelegate,NVActivit
         micStringLB.frame.origin.y = ysize - (ysize*0.35)
         micStringLB.frame.origin.x = 10
         micStringLB.sizeToFit()
-    
+        }
         
     }
     
@@ -246,7 +311,7 @@ extension MainViewController: UITableViewDataSource{
             return 1
         }
         else {
-            return 0
+            return realm.objects(SpeachStringresult.self).count
         }
         
     }
@@ -261,10 +326,10 @@ extension MainViewController: UITableViewDataSource{
         }
         
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-      
+       let object = realm.objects(SpeachStringresult.self)
         
         if indexPath.section == 0 {
             
@@ -279,7 +344,8 @@ extension MainViewController: UITableViewDataSource{
         else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
-            cell.voiceRecodeLB.text = String(indexPath.row)
+            cell.voiceRecodeLB.text = object[indexPath.row].stringdata
+            cell.voiceRecodeLB.sizeToFit()
             cell.didSelectCollectionView = {[weak self] in let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
                 
                 self?.navigationController?.pushViewController(nextView, animated: true)
@@ -290,6 +356,7 @@ extension MainViewController: UITableViewDataSource{
             return  cell
             
         }
+        
         
     }
     
@@ -307,6 +374,7 @@ extension MainViewController : UITableViewDelegate{
         self.navigationController?.pushViewController(nextView, animated: true)
         
     }
+        
       
     
     

@@ -12,6 +12,6 @@ target 'Sherpa' do
     pod 'Kingfisher'
     pod 'Toast-Swift'
     pod 'NVActivityIndicatorView'
-
+    pod 'RealmSwift'
 
 end
