@@ -91,6 +91,21 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		5288E01120D130990068B21C /* Objcet */ = {
+			isa = PBXGroup;
+			children = (
+				5288E01220D1309F0068B21C /* Realm */,
+			);
+			path = Objcet;
+			sourceTree = "<group>";
+		};
+		5288E01220D1309F0068B21C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		52E0CD7820C67E35000B8489 /* MainTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +155,7 @@
 		52F6D61920C0210A00245C07 /* Sherpa */ = {
 			isa = PBXGroup;
 			children = (
+				5288E01120D130990068B21C /* Objcet */,
 				5250773120CCD82B009EA147 /* CustomExtension */,
 				527F260420C3F93300F4ADB5 /* Support */,
 				527F260320C3F8F300F4ADB5 /* Storyboard */,
@@ -247,6 +263,8 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
@@ -257,6 +275,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
