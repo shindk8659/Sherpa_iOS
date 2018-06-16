@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F838E7485E7B84D12974B6E /* Pods_Sherpa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */; };
-		521B80DB20C90489003F8833 /* RecommnedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DA20C90489003F8833 /* RecommnedViewController.swift */; };
+		521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DA20C90489003F8833 /* RecommendViewController.swift */; };
 		521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DC20C938E2003F8833 /* MainViewController.swift */; };
 		5250773320CCD83C009EA147 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250773220CCD83C009EA147 /* extension.swift */; };
 		52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */; };
@@ -20,14 +20,20 @@
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
 		52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */; };
+		CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE30782020D4BD6800BDE64F /* Recommend.storyboard */; };
 		CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */; };
+		CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */; };
+		CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */; };
+		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
+		CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15620D4C0FF00619841 /* RecommendModel.swift */; };
+		CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		521B80DA20C90489003F8833 /* RecommnedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommnedViewController.swift; sourceTree = "<group>"; };
+		521B80DA20C90489003F8833 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		521B80DC20C938E2003F8833 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5250773220CCD83C009EA147 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -42,7 +48,13 @@
 		52F6D62420C0210C00245C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52F6D62620C0210C00245C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B0B0E74D6F6D9813D81EB24 /* Pods-Sherpa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.debug.xcconfig"; sourceTree = "<group>"; };
+		CE30782020D4BD6800BDE64F /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
 		CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
+		CE89B15620D4C0FF00619841 /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
+		CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -66,20 +78,21 @@
 			isa = PBXGroup;
 			children = (
 				5250773220CCD83C009EA147 /* extension.swift */,
+				CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */,
 			);
 			path = CustomExtension;
 			sourceTree = "<group>";
 		};
-		527F260220C3F8E900F4ADB5 /* Viewcontroller */ = {
+		527F260220C3F8E900F4ADB5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				52E0CD7820C67E35000B8489 /* MainTableView */,
 				52E0CD7B20C67F00000B8489 /* InfoViewController.swift */,
-				521B80DA20C90489003F8833 /* RecommnedViewController.swift */,
+				CE89B14F20D4BE5500619841 /* Recommend */,
 				FFB8134820D3F7F000A51083 /* DetailListViewController.swift */,
 				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
 			);
-			path = Viewcontroller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		527F260320C3F8F300F4ADB5 /* Storyboard */ = {
@@ -88,6 +101,7 @@
 				52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */,
 				52F6D61E20C0210A00245C07 /* Main.storyboard */,
 				FFB8134420D3905000A51083 /* Detail.storyboard */,
+				CE30782020D4BD6800BDE64F /* Recommend.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -171,7 +185,7 @@
 				5250773120CCD82B009EA147 /* CustomExtension */,
 				527F260420C3F93300F4ADB5 /* Support */,
 				527F260320C3F8F300F4ADB5 /* Storyboard */,
-				527F260220C3F8E900F4ADB5 /* Viewcontroller */,
+				527F260220C3F8E900F4ADB5 /* ViewController */,
 			);
 			path = Sherpa;
 			sourceTree = "<group>";
@@ -199,6 +213,18 @@
 				CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		CE89B14F20D4BE5500619841 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				521B80DA20C90489003F8833 /* RecommendViewController.swift */,
+				CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */,
+				CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */,
+				CE89B15420D4C02200619841 /* RecommendCell.swift */,
+				CE89B15620D4C0FF00619841 /* RecommendModel.swift */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
+				CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */,
 				52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */,
 				52F6D62020C0210A00245C07 /* Main.storyboard in Resources */,
 				FFB8134520D3905000A51083 /* Detail.storyboard in Resources */,
@@ -330,13 +357,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */,
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
 				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
-				521B80DB20C90489003F8833 /* RecommnedViewController.swift in Sources */,
+				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
+				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
 				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
+				CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
 				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
+				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
