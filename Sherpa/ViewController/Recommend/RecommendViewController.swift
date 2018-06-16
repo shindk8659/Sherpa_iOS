@@ -10,9 +10,18 @@ import UIKit
 
 class RecommendViewController: UIViewController {
 
-    @IBOutlet private weak var collectionView: UICollectionView!
+    let recommendList = RecommendDummy.list
+    var selectedRecommend: Recommend?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == DetailListViewController.identifier {
+            let detailViewController = segue.destination as! DetailListViewController
+            detailViewController.recommend = selectedRecommend
+        }
+    }
+    
+    func moveToDetailPage() {
+        performSegue(withIdentifier: DetailListViewController.identifier, sender: nil)
     }
 }
