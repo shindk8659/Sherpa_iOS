@@ -16,8 +16,7 @@ extension RecommendViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RecommendCell
-        let recommend = recommendList[indexPath.item]
-        cell.model = RecommendModel(title: recommend.title, image: recommend.backgroundImage)
+        cell.model = recommendList[indexPath.item]
         return cell
     }
 }

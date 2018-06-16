@@ -61,8 +61,3 @@ enum Recommend {
         .famous, .nearToSeoul, .easy, .difficult, .withBaby, .autumn, .popular, .valley
     ]
 }
-
-struct RecommendModel {
-    let title: String
-    let image: UIImage
-}

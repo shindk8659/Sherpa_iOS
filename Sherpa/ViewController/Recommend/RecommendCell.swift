@@ -13,9 +13,9 @@ class RecommendCell: UICollectionViewCell {
     @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     
-    var model: RecommendModel? {
+    var model: Recommend? {
         didSet {
-            backgroundImageView.image = model?.image
+            backgroundImageView.image = model?.backgroundImage
             titleLabel.text = model?.title
         }
     }
