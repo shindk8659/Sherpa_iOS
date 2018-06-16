@@ -14,6 +14,11 @@
 		52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */; };
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
 		52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */; };
+		52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972AC20D4D59B0000988E /* NetworkCallBack.swift */; };
+		52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972AE20D4D5B90000988E /* NetworkDelegate.swift */; };
+		52C972B120D4D8010000988E /* SpeechNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B020D4D8010000988E /* SpeechNM.swift */; };
+		52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B220D4D8A20000988E /* SpeechVO.swift */; };
+		52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B520D4E4E50000988E /* SpeachStringresult.swift */; };
 		52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */; };
 		52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7B20C67F00000B8489 /* InfoViewController.swift */; };
 		52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6D61A20C0210A00245C07 /* AppDelegate.swift */; };
@@ -39,6 +44,11 @@
 		52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
 		52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewCell.swift; sourceTree = "<group>"; };
+		52C972AC20D4D59B0000988E /* NetworkCallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
+		52C972AE20D4D5B90000988E /* NetworkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
+		52C972B020D4D8010000988E /* SpeechNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNM.swift; sourceTree = "<group>"; };
+		52C972B220D4D8A20000988E /* SpeechVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVO.swift; sourceTree = "<group>"; };
+		52C972B520D4E4E50000988E /* SpeachStringresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachStringresult.swift; sourceTree = "<group>"; };
 		52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		52E0CD7B20C67F00000B8489 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		52F6D61720C0210A00245C07 /* Sherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,17 +126,46 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		5288E01120D130990068B21C /* Objcet */ = {
+		52C972A820D4D4D10000988E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5288E01220D1309F0068B21C /* Realm */,
+				52C972AB20D4D5750000988E /* Protocol */,
+				52C972AA20D4D4E20000988E /* Network */,
+				52C972A920D4D4DB0000988E /* Object */,
 			);
-			path = Objcet;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5288E01220D1309F0068B21C /* Realm */ = {
+		52C972A920D4D4DB0000988E /* Object */ = {
 			isa = PBXGroup;
 			children = (
+				52C972B420D4E4C00000988E /* Realm */,
+				52C972B220D4D8A20000988E /* SpeechVO.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		52C972AA20D4D4E20000988E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52C972AE20D4D5B90000988E /* NetworkDelegate.swift */,
+				52C972B020D4D8010000988E /* SpeechNM.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		52C972AB20D4D5750000988E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				52C972AC20D4D59B0000988E /* NetworkCallBack.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		52C972B420D4E4C00000988E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				52C972B520D4E4E50000988E /* SpeachStringresult.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -180,8 +219,8 @@
 		52F6D61920C0210A00245C07 /* Sherpa */ = {
 			isa = PBXGroup;
 			children = (
+				52C972A820D4D4D10000988E /* Model */,
 				CE35BBC020D4B8DD0068C189 /* Base */,
-				5288E01120D130990068B21C /* Objcet */,
 				5250773120CCD82B009EA147 /* CustomExtension */,
 				527F260420C3F93300F4ADB5 /* Support */,
 				527F260320C3F8F300F4ADB5 /* Storyboard */,
@@ -357,9 +396,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C972B120D4D8010000988E /* SpeechNM.swift in Sources */,
 				CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */,
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
 				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
+				52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
 				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
@@ -370,8 +411,11 @@
 				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
+				52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */,
+				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
+				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
 				FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */,
 				52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */,
 			);
