@@ -20,6 +20,7 @@
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
 		52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */; };
+		CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
@@ -41,6 +42,7 @@
 		52F6D62420C0210C00245C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52F6D62620C0210C00245C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B0B0E74D6F6D9813D81EB24 /* Pods-Sherpa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.debug.xcconfig"; sourceTree = "<group>"; };
+		CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		52F6D61920C0210A00245C07 /* Sherpa */ = {
 			isa = PBXGroup;
 			children = (
+				CE35BBC020D4B8DD0068C189 /* Base */,
 				5288E01120D130990068B21C /* Objcet */,
 				5250773120CCD82B009EA147 /* CustomExtension */,
 				527F260420C3F93300F4ADB5 /* Support */,
@@ -188,6 +191,14 @@
 				DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE35BBC020D4B8DD0068C189 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
 				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommnedViewController.swift in Sources */,
+				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
 				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
