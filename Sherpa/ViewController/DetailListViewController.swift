@@ -9,10 +9,11 @@
 import UIKit
 
 class DetailListViewController: UIViewController {
+    
+    var recommend: Recommend?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +21,4 @@ class DetailListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
 }
