@@ -10,7 +10,7 @@ import UIKit
 
 class RecommendViewController: UIViewController {
 
-    let recommendList = RecommendDummy.list
+    let recommendList = Recommend.allValues
     var selectedRecommend: Recommend?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
