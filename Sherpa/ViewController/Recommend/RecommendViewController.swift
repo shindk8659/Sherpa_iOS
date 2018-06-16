@@ -8,8 +8,10 @@
 
 import UIKit
 
-class RecommnedViewController: UIViewController {
+class RecommendViewController: UIViewController {
 
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
