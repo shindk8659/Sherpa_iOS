@@ -12,11 +12,6 @@ import Realm
 import RealmSwift
 import Speech
 
-class SpeachStringresult: Object {
-    @objc dynamic var stringdata : String = ""
-}
-
-
 class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGestureRecognizerDelegate,NVActivityIndicatorViewable{
 
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
@@ -24,7 +19,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
- 
+    var speechVO : [SpeechVO] = []
     let realm = try! Realm()
     let mainheaderview = MainHeaderTableViewCell()
     
@@ -34,8 +29,6 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     let micimg = UIImageView()
     // 마이크 애니메이션 액티비티 인디케이터 뷰
     var detectionTimer = Timer()
-    var detectionTimer2 = Timer()
-    
     
     var tablex :CGFloat = 0.0
     var tabley :CGFloat = 0.0
@@ -50,7 +43,14 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        //네트워크
+        let object = realm.objects(SpeachStringresult.self)
+        let speechnetwork = SpeechNM(self)
+        speechnetwork.SpeechSend(comment: object )
         
+      
+        //////////
+
         speechRecognizer?.delegate = self
         
         self.view.addSubview(activityIndicatorView)
@@ -76,6 +76,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         stopListening()
     }
     
@@ -123,7 +124,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
                 self.detectionTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { (timer) in
                     print("녹음타이머 끝")
                    
-                    if self.micStringLB.text != "듣고있습니다:)"{
+                    if self.micStringLB.text != "듣고있습니다:)" && self.micStringLB.text != ""{
                         self.addspeechData(string: self.gsno(self.micStringLB.text))
                         
                     }
@@ -198,6 +199,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
         recognitionTask?.cancel()
         recognitionTask = nil
         recognitionRequest?.endAudio()
+    
         isListening = false
     }
     
@@ -221,16 +223,15 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     
     @IBAction func cancelmicAction(_ sender: Any) {
         
-   
              stopListening()
-        
+            tableview.scrollToBottom()
         
     }
     
   
     
     @IBAction func micAction(_ sender: Any) {
-        
+        print(speechVO.count)
         if audioEngine.isRunning == false{
             
             
@@ -323,7 +324,8 @@ extension MainViewController: UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MainHeaderCell") as! MainHeaderTableViewCell
             cell.didSelectTableView = {[weak self] in let nextview = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
-                
+                self?.micStringLB.text = ""
+                self?.stopListening()
                 self?.navigationController?.pushViewController(nextview, animated: true)
             }
             
@@ -332,9 +334,13 @@ extension MainViewController: UITableViewDataSource{
         else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
+           
+        
             cell.voiceRecodeLB.text = object[indexPath.row].stringdata
             cell.voiceRecodeLB.sizeToFit()
             cell.didSelectCollectionView = {[weak self] in let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
+                self?.micStringLB.text = ""
+                self?.stopListening()
                 
                 self?.navigationController?.pushViewController(nextView, animated: true)
                 
@@ -362,12 +368,32 @@ extension MainViewController : UITableViewDelegate{
         self.navigationController?.pushViewController(nextView, animated: true)
         
     }
-        
-      
-    
-    
-    
+
     
     }
+    
+}
+extension MainViewController : NetworkCallBack{
+    func networkResultData(resultData: Any, code: String) {
+        
+        if code == "sendspeech"{
+            
+            speechVO.append(resultData as! SpeechVO)
+            
+        }
+        else if code == "parametererror"{
+            
+            speechVO.append(resultData as! SpeechVO)
+            print(speechVO.last?.result)
+           
+           
+            
+        }
+        
+        
+        
+        
+    }
+    
     
 }
