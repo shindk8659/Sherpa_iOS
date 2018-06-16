@@ -11,18 +11,6 @@ import UIKit
 class RecommnedViewController: UIViewController {
 
     override func viewDidLoad() {
-      
-        let longTitle = UIImageView()
-        longTitle.image = #imageLiteral(resourceName: "naviLogo")
-        let leftItem = UIBarButtonItem(customView: longTitle)
-        self.navigationItem.leftBarButtonItem = leftItem
-    
-        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-   
-
 }

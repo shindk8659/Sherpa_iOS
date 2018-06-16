@@ -71,19 +71,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
         let tvGesture = UIPanGestureRecognizer(target: self, action: #selector(stopListening))
         tvGesture.delegate = self
         self.tableview.addGestureRecognizer(tvGesture)
-        
-        
-        //네이게이션바 타이틀
-        let longTitle = UIImageView()
-        longTitle.image = #imageLiteral(resourceName: "naviLogo")
-        let leftItem = UIBarButtonItem(customView: longTitle)
-        self.navigationItem.leftBarButtonItem = leftItem
-        longTitle.isUserInteractionEnabled = true
-        let taptitle = UITapGestureRecognizer(target: self, action: #selector(gototop))
-        longTitle.addGestureRecognizer(taptitle)
-        
-       
-        
+
       
     }
     
