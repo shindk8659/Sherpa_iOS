@@ -7,39 +7,23 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class SpeechVO: Mappable {
-    var result: Double?
+
+struct SpeechVO: Codable {
+    var result: Int?
     var meta: SpeechMeta?
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        result <- map["result"]
-        meta <- map["meta"]
-    }
 }
-class SpeechMeta:Mappable{
+
+
+struct SpeechMeta:Codable{
     
     var Category:String?
     var response: [SpeechResponse]?
     
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        
-        Category <- map["Category"]
-        response <- map["response"]
-    }
     
     
 }
-class SpeechResponse:Mappable{
+struct SpeechResponse:Codable{
     
     var code: String?
     var name: String?
@@ -50,25 +34,5 @@ class SpeechResponse:Mappable{
     var summary: String?
     var imageURL:String?
     var isFamous: Int?
-    
-    required init?(map: Map) {
-        
-    }
-    
-    func mapping(map: Map) {
-        
-         code <- map["code"]
-         name <- map["name"]
-         height <- map["height"]
-         address <- map["address"]
-         management <- map["management"]
-         detail <- map["detail"]
-         summary <- map["summary"]
-         imageURL <- map["imageURL"]
-         isFamous <- map["isFamous"]
-        
-        
-    }
-    
     
 }

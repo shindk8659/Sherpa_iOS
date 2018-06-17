@@ -118,6 +118,24 @@ extension String {
         else{return false}
     }
 }
+extension SpeechNM{
+    //옵셔널 String을 해제하는데 값이 nil이면 ""을 반환
+    func gsno(_ data: String?) -> String {
+        guard let str = data else {
+            return ""
+        }
+        return str
+    }
+    
+    //옵셔널 Int를 해제하는데 값이 nil이면 0을 반환
+    func gino(_ data: Int?) -> Int {
+        guard let num = data else {
+            return 0
+        }
+        return num
+    }
+    
+}
 
 extension UIViewController {
     
@@ -159,6 +177,7 @@ extension UIViewController {
         }
         return num
     }
+    
     
     func simpleAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)

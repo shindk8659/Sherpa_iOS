@@ -10,7 +10,7 @@ import UIKit
 
 class MainCVTableViewCell: UITableViewCell {
 
-    
+    var responseVO : [SpeechResponse] = []
     
     @IBOutlet weak var orderCV: UICollectionView!
     
@@ -22,7 +22,7 @@ class MainCVTableViewCell: UITableViewCell {
         
     
         super.awakeFromNib()
-        
+        print(responseVO.count)
         orderCV.delegate = self
         orderCV.dataSource = self
         
