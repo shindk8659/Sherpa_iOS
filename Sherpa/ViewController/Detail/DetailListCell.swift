@@ -8,34 +8,6 @@
 
 import UIKit
 
-class DetailDescriptionCell: UITableViewCell {
-    
-   
-    
-    var model: Recommend? {
-        didSet {
-            
-        }
-    }
-}
-
-extension DetailCell: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as! DetailListCell
-        cell.model = model?[indexPath.item]
-        return cell
-    }
-}
-
-extension DetailCell: UITableViewDelegate {
-    
-}
-
 class DetailListCell: UITableViewCell {
     
     @IBOutlet private weak var mountainImageView: UIImageView!
@@ -44,12 +16,11 @@ class DetailListCell: UITableViewCell {
     
     var model: Mountain? {
         didSet {
-            print(model)
-            if let url = URL(string: model?.imageURL ?? "") {
-                mountainImageView.kf.setImage(with: url)
-            }
             mountainNameLabel.text = model?.name
             mountainDescriptionLabel.text = model?.detail
+            if let url = URL(string: "http://" + (model?.imageURL ?? "")) {
+                mountainImageView.kf.setImage(with: url)
+            }
         }
     }
 }
