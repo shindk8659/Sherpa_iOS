@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct Mountain: Codable {
+    var code: String
+    var name: String
+    var height: Int
+    var address: String
+    var management: String
+    var detail: String
+    var summary: String
+    var imageURL: String
+    var isFamous: Int
+}
