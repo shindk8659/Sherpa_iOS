@@ -27,6 +27,10 @@
 		52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */; };
 		CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE30782020D4BD6800BDE64F /* Recommend.storyboard */; };
 		CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */; };
+		CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC420D64BED0068C189 /* DetailListCell.swift */; };
+		CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */; };
+		CE35BBC920D650000068C189 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC820D650000068C189 /* Mountain.swift */; };
+		CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */; };
 		CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */; };
 		CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
@@ -60,6 +64,10 @@
 		8B0B0E74D6F6D9813D81EB24 /* Pods-Sherpa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.debug.xcconfig"; sourceTree = "<group>"; };
 		CE30782020D4BD6800BDE64F /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
 		CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		CE35BBC420D64BED0068C189 /* DetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCell.swift; sourceTree = "<group>"; };
+		CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailListViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		CE35BBC820D650000068C189 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
+		CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailListViewController+Network.swift"; sourceTree = "<group>"; };
 		CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
@@ -99,8 +107,7 @@
 				52E0CD7820C67E35000B8489 /* MainTableView */,
 				52E0CD7B20C67F00000B8489 /* InfoViewController.swift */,
 				CE89B14F20D4BE5500619841 /* Recommend */,
-				FFB8134820D3F7F000A51083 /* DetailListViewController.swift */,
-				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
+				CE35BBC320D64A320068C189 /* Detail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			children = (
 				52C972B420D4E4C00000988E /* Realm */,
 				52C972B220D4D8A20000988E /* SpeechVO.swift */,
+				CE35BBC820D650000068C189 /* Mountain.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -252,6 +260,18 @@
 				CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		CE35BBC320D64A320068C189 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FFB8134820D3F7F000A51083 /* DetailListViewController.swift */,
+				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
+				CE35BBC420D64BED0068C189 /* DetailListCell.swift */,
+				CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */,
+				CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		CE89B14F20D4BE5500619841 /* Recommend */ = {
@@ -403,7 +423,10 @@
 				52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
+				CE35BBC920D650000068C189 /* Mountain.swift in Sources */,
+				CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */,
 				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
+				CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
 				CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */,
@@ -413,6 +436,7 @@
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */,
 				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
+				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
 				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
