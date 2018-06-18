@@ -31,6 +31,13 @@
 		CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */; };
 		CE35BBC920D650000068C189 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC820D650000068C189 /* Mountain.swift */; };
 		CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */; };
+		CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCC20D68F1A0068C189 /* DetailDescriptionReusableView.swift */; };
+		CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCE20D694B40068C189 /* TrailCell.swift */; };
+		CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD020D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift */; };
+		CE35BBD520D695F00068C189 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD420D695F00068C189 /* Trail.swift */; };
+		CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD620D696490068C189 /* NetworkRequestor.swift */; };
+		CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD820D6969D0068C189 /* APIRouter.swift */; };
+		CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBDA20D6CF7E0068C189 /* DetailMountainViewController+Network.swift */; };
 		CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */; };
 		CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
@@ -68,6 +75,13 @@
 		CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailListViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		CE35BBC820D650000068C189 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 		CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailListViewController+Network.swift"; sourceTree = "<group>"; };
+		CE35BBCC20D68F1A0068C189 /* DetailDescriptionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionReusableView.swift; sourceTree = "<group>"; };
+		CE35BBCE20D694B40068C189 /* TrailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
+		CE35BBD020D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailMountainViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		CE35BBD420D695F00068C189 /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
+		CE35BBD620D696490068C189 /* NetworkRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestor.swift; sourceTree = "<group>"; };
+		CE35BBD820D6969D0068C189 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		CE35BBDA20D6CF7E0068C189 /* DetailMountainViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailMountainViewController+Network.swift"; sourceTree = "<group>"; };
 		CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
@@ -149,6 +163,7 @@
 				52C972B420D4E4C00000988E /* Realm */,
 				52C972B220D4D8A20000988E /* SpeechVO.swift */,
 				CE35BBC820D650000068C189 /* Mountain.swift */,
+				CE35BBD420D695F00068C189 /* Trail.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -158,6 +173,8 @@
 			children = (
 				52C972AE20D4D5B90000988E /* NetworkDelegate.swift */,
 				52C972B020D4D8010000988E /* SpeechNM.swift */,
+				CE35BBD620D696490068C189 /* NetworkRequestor.swift */,
+				CE35BBD820D6969D0068C189 /* APIRouter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -265,13 +282,33 @@
 		CE35BBC320D64A320068C189 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CE35BBD220D695D00068C189 /* List */,
+				CE35BBD320D695D90068C189 /* End */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CE35BBD220D695D00068C189 /* List */ = {
+			isa = PBXGroup;
+			children = (
 				FFB8134820D3F7F000A51083 /* DetailListViewController.swift */,
-				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
 				CE35BBC420D64BED0068C189 /* DetailListCell.swift */,
 				CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */,
 				CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */,
 			);
-			path = Detail;
+			path = List;
+			sourceTree = "<group>";
+		};
+		CE35BBD320D695D90068C189 /* End */ = {
+			isa = PBXGroup;
+			children = (
+				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
+				CE35BBCC20D68F1A0068C189 /* DetailDescriptionReusableView.swift */,
+				CE35BBCE20D694B40068C189 /* TrailCell.swift */,
+				CE35BBD020D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift */,
+				CE35BBDA20D6CF7E0068C189 /* DetailMountainViewController+Network.swift */,
+			);
+			path = End;
 			sourceTree = "<group>";
 		};
 		CE89B14F20D4BE5500619841 /* Recommend */ = {
@@ -421,6 +458,8 @@
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
 				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
 				52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */,
+				CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */,
+				CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
 				CE35BBC920D650000068C189 /* Mountain.swift in Sources */,
@@ -430,16 +469,21 @@
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
 				CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */,
+				CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
+				CE35BBD520D695F00068C189 /* Trail.swift in Sources */,
 				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
+				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */,
 				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
 				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
+				CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
 				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
+				CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */,
 				FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */,
 				52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */,
 			);
