@@ -31,10 +31,22 @@ class DetailListViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == DetailMountainViewController.identifier {
+            let detailMountainViewController = segue.destination as! DetailMountainViewController
+            detailMountainViewController.mountain = sender as? Mountain
+        }
+    }
+    
     func updateDescriptionUI() {
         thumbnailImageView.image = recommend?.backgroundImage
         titleLabel.text = recommend?.title
         descriptionTextView.text = recommend?.description
+    }
+    
+    func moveToDetail(with mountain: Mountain?) {
+        performSegue(withIdentifier: DetailMountainViewController.identifier, sender: mountain)
     }
     
     @objc
