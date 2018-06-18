@@ -8,21 +8,41 @@
 
 import UIKit
 
-extension DetailMountainViewController: UICollectionViewDelegate {
+extension DetailMountainViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (UIScreen.main.bounds.width - 45) / 2
+        let height = CGFloat(203)
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return headerSize
+    }
 }
 
 extension DetailMountainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+        guard let count = trails?.count else{
+            return 0
+        }
+        return count > 10 ? 10 : count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TrailCell
+        cell.trailModel = trails?[indexPath.item]
+        return cell
+    }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "DetailDescriptionReusableView", for: indexPath) as! DetailDescriptionReusableView
-            view.mountainModel = mountain
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "DetailDescriptionReusableView", for: indexPath) as! DetailDescriptionReusableView
+        view.mountainModel = mountain
+        view.moreButtonTapped = { [weak self] in
+            self?.headerSize = view.frame.size
+            collectionView.reloadData()
         }
+        return view
     }
 }

@@ -14,6 +14,7 @@ class DetailListViewController: UIViewController {
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var moreButton: UIButton!
     
     var recommend: Recommend?
     var mountains: [Mountain]? {
@@ -60,6 +61,24 @@ class DetailListViewController: UIViewController {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         let leftItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = leftItem
+    }
+    
+    @IBAction func moreButtonTapped(_ sender: UIButton) {
+        let currentPage = (mountains?.count ?? 0) / 10
+        requestRecommendedMountains(pageNo: currentPage + 1) { [weak self] mountains in
+            guard let `self` = self else {
+                return
+            }
+            
+            guard let count = mountains?.count, count > 0 else {
+                self.moreButton.isHidden = true
+                return
+            }
+            
+            mountains?.forEach {
+                self.mountains?.append($0)
+            }
+        }
     }
 }
 

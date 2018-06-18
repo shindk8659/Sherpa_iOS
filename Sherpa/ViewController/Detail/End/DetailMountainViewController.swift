@@ -7,16 +7,27 @@
 //
 
 import UIKit
+import Alamofire
 
 class DetailMountainViewController: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     
     var mountain: Mountain?
+    var trails: [Trail]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    var headerSize = CGSize(width: UIScreen.main.bounds.width, height: 480)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        requestTrails { [weak self] trails in
+            self?.trails = trails
+        }
     }
     
     @objc
