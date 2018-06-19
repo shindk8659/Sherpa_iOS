@@ -43,6 +43,11 @@
 		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
 		CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15620D4C0FF00619841 /* RecommendModel.swift */; };
 		CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */; };
+		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
+		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
+		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
+		CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A720D810DB00B261BF /* GetWGSNM.swift */; };
+		CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9AA20D810ED00B261BF /* GeoConverter.swift */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
@@ -87,6 +92,11 @@
 		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
 		CE89B15620D4C0FF00619841 /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
+		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
+		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
+		CED9E9A720D810DB00B261BF /* GetWGSNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWGSNM.swift; sourceTree = "<group>"; };
+		CED9E9AA20D810ED00B261BF /* GeoConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoConverter.swift; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -162,6 +172,8 @@
 			children = (
 				52C972B420D4E4C00000988E /* Realm */,
 				52C972B220D4D8A20000988E /* SpeechVO.swift */,
+				CED9E9A220D810B000B261BF /* SGISVO.swift */,
+				CED9E9A320D810B000B261BF /* WGSVO.swift */,
 				CE35BBC820D650000068C189 /* Mountain.swift */,
 				CE35BBD420D695F00068C189 /* Trail.swift */,
 			);
@@ -173,6 +185,8 @@
 			children = (
 				52C972AE20D4D5B90000988E /* NetworkDelegate.swift */,
 				52C972B020D4D8010000988E /* SpeechNM.swift */,
+				CED9E9A720D810DB00B261BF /* GetWGSNM.swift */,
+				CED9E9A620D810DB00B261BF /* SGISNM.swift */,
 				CE35BBD620D696490068C189 /* NetworkRequestor.swift */,
 				CE35BBD820D6969D0068C189 /* APIRouter.swift */,
 			);
@@ -244,6 +258,7 @@
 		52F6D61920C0210A00245C07 /* Sherpa */ = {
 			isa = PBXGroup;
 			children = (
+				CED9E9AC20D810F500B261BF /* Common */,
 				52C972A820D4D4D10000988E /* Model */,
 				CE35BBC020D4B8DD0068C189 /* Base */,
 				5250773120CCD82B009EA147 /* CustomExtension */,
@@ -321,6 +336,14 @@
 				CE89B15620D4C0FF00619841 /* RecommendModel.swift */,
 			);
 			path = Recommend;
+			sourceTree = "<group>";
+		};
+		CED9E9AC20D810F500B261BF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CED9E9AA20D810ED00B261BF /* GeoConverter.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,15 +499,18 @@
 			files = (
 				52C972B120D4D8010000988E /* SpeechNM.swift in Sources */,
 				CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */,
+				CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */,
 				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
 				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
 				52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */,
+				CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */,
 				CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */,
 				CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
 				CE35BBC920D650000068C189 /* Mountain.swift in Sources */,
 				CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */,
+				CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */,
 				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
 				CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
@@ -497,6 +523,7 @@
 				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
+				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
 				52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */,
 				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
 				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
@@ -504,6 +531,7 @@
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
 				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
+				CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */,
 				CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */,
 				FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */,
 				52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */,
@@ -652,8 +680,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,8 +700,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
