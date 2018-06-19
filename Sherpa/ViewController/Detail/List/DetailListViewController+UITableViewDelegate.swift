@@ -9,7 +9,10 @@
 import UIKit
 
 extension DetailListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        moveToDetail(with: mountains?[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension DetailListViewController: UITableViewDataSource {

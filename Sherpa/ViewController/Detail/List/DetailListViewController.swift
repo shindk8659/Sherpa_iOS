@@ -14,6 +14,7 @@ class DetailListViewController: UIViewController {
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var moreButton: UIButton!
     
     var recommend: Recommend?
     var mountains: [Mountain]? {
@@ -31,10 +32,22 @@ class DetailListViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == DetailMountainViewController.identifier {
+            let detailMountainViewController = segue.destination as! DetailMountainViewController
+            detailMountainViewController.mountain = sender as? Mountain
+        }
+    }
+    
     func updateDescriptionUI() {
         thumbnailImageView.image = recommend?.backgroundImage
         titleLabel.text = recommend?.title
         descriptionTextView.text = recommend?.description
+    }
+    
+    func moveToDetail(with mountain: Mountain?) {
+        performSegue(withIdentifier: DetailMountainViewController.identifier, sender: mountain)
     }
     
     @objc
@@ -48,6 +61,24 @@ class DetailListViewController: UIViewController {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         let leftItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = leftItem
+    }
+    
+    @IBAction func moreButtonTapped(_ sender: UIButton) {
+        let currentPage = (mountains?.count ?? 0) / 10
+        requestRecommendedMountains(pageNo: currentPage + 1) { [weak self] mountains in
+            guard let `self` = self else {
+                return
+            }
+            
+            guard let count = mountains?.count, count > 0 else {
+                self.moreButton.isHidden = true
+                return
+            }
+            
+            mountains?.forEach {
+                self.mountains?.append($0)
+            }
+        }
     }
 }
 

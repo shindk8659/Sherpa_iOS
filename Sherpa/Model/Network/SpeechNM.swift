@@ -12,7 +12,7 @@ import SwiftyJSON
 import RealmSwift
 import Realm
 
-class SpeechNM{
+class SpeechNM {
     
     func FirstSpeechSend(realm: Results<SpeechStringresult>, completion: @escaping (SpeechVO?) -> Void) {
         

@@ -87,7 +87,7 @@ enum Recommend {
         case .nearToSeoul: return "/getAroundMountains"
         case .easy: return "/getEasyMountains"
         case .difficult: return "/getDifficultMountains"
-        case .withBaby: return "/withBaby"
+        case .withBaby: return "/getMountainsWithBaby"
         case .autumn: return "/getAutumnMountains"
         case .popular: return "/getPopularMountains"
         case .valley: return "/getVallyMountains"
