@@ -300,6 +300,7 @@
                                         <connections>
                                             <outlet property="distanceLabel" destination="mQr-sY-jSe" id="ubR-6v-15p"/>
                                             <outlet property="hikingTimeLabel" destination="Kfe-l8-rZJ" id="G06-jg-AG8"/>
+                                            <outlet property="mapView" destination="0o8-IB-r6A" id="6LU-wg-qAR"/>
                                             <outlet property="trailNameLabel" destination="Zmd-XA-0Tt" id="LcD-Cq-RSm"/>
                                         </connections>
                                     </collectionViewCell>
