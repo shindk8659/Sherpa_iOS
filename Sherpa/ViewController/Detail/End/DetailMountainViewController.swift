@@ -65,6 +65,17 @@ class DetailMountainViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == MapViewController.identifier {
+            let indexPath = sender as! IndexPath
+            let destination = segue.destination as! MapViewController
+            destination.paths = convertedPaths.filter { $0.0 == indexPath.item }
+                                              .map { $0.1 }
+            destination.trail = trails?[indexPath.item]
+        }
+    }
+    
     @objc
     func backButtonTapped() {
         navigationController?.popViewController(animated: true)

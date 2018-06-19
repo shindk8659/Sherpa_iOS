@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -516,11 +515,20 @@
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="collectionView" destination="U5L-JW-iXG" id="tiZ-iQ-gph"/>
+                        <segue destination="BT9-Jb-ijn" kind="presentation" identifier="MapViewController" id="eKy-I3-qn1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfQ-l1-TJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="640.79999999999995" y="-9.8950524737631191"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="3WG-ax-sZU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="BT9-Jb-ijn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7D-Sz-hZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="-9"/>
         </scene>
     </scenes>
     <resources>

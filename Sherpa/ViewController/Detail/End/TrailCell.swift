@@ -23,6 +23,9 @@ class TrailCell: UICollectionViewCell {
         super.awakeFromNib()
         map = createMapView(position: nil)
         mapView.addSubview(map ?? UIView())
+        let coverView = UIView(frame: mapView.bounds)
+        coverView.backgroundColor = .clear
+        mapView.addSubview(coverView)
     }
     
     var trailModel: Trail? {

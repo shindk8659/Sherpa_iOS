@@ -19,6 +19,10 @@ extension DetailMountainViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return headerSize
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: MapViewController.identifier, sender: indexPath)
+    }
 }
 
 extension DetailMountainViewController: UICollectionViewDataSource {

@@ -48,6 +48,8 @@
 		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
 		CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A720D810DB00B261BF /* GetWGSNM.swift */; };
 		CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9AA20D810ED00B261BF /* GeoConverter.swift */; };
+		CED9E9AE20D9613600B261BF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9AD20D9613600B261BF /* MapViewController.swift */; };
+		CED9E9B120D9615D00B261BF /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9E9B020D9615D00B261BF /* Map.storyboard */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
@@ -97,6 +99,8 @@
 		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
 		CED9E9A720D810DB00B261BF /* GetWGSNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWGSNM.swift; sourceTree = "<group>"; };
 		CED9E9AA20D810ED00B261BF /* GeoConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoConverter.swift; sourceTree = "<group>"; };
+		CED9E9AD20D9613600B261BF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CED9E9B020D9615D00B261BF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 				52E0CD7B20C67F00000B8489 /* InfoViewController.swift */,
 				CE89B14F20D4BE5500619841 /* Recommend */,
 				CE35BBC320D64A320068C189 /* Detail */,
+				CED9E9AF20D9613D00B261BF /* Map */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				52F6D61E20C0210A00245C07 /* Main.storyboard */,
 				FFB8134420D3905000A51083 /* Detail.storyboard */,
 				CE30782020D4BD6800BDE64F /* Recommend.storyboard */,
+				CED9E9B020D9615D00B261BF /* Map.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -346,6 +352,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		CED9E9AF20D9613D00B261BF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CED9E9AD20D9613600B261BF /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,6 +426,7 @@
 				52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */,
 				52F6D62020C0210A00245C07 /* Main.storyboard in Resources */,
 				FFB8134520D3905000A51083 /* Detail.storyboard in Resources */,
+				CED9E9B120D9615D00B261BF /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +531,7 @@
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
 				CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */,
+				CED9E9AE20D9613600B261BF /* MapViewController.swift in Sources */,
 				CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
 				CE35BBD520D695F00068C189 /* Trail.swift in Sources */,

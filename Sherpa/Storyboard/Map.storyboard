@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z4p-KU-yOL">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="Yni-F2-kcK">
+            <objects>
+                <viewController id="z4p-KU-yOL" customClass="MapViewController" customModule="Sherpa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2lf-ZN-sey">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jf0-gj-rKt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-l9-fKT">
+                                <rect key="frame" x="0.0" y="44" width="375" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeBlack" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-cR-xGR">
+                                        <rect key="frame" x="23" y="22" width="21" height="20"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecY-7P-LT8">
+                                        <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="t4L-KO-6Hs"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="z4p-KU-yOL" eventType="touchUpInside" id="h7B-8I-V6f"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등산로이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKi-JC-zIQ">
+                                        <rect key="frame" x="144" y="20" width="87" height="24"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <color key="textColor" red="0.17254901959999999" green="0.16862745100000001" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kKi-JC-zIQ" firstAttribute="centerY" secondItem="eFx-l9-fKT" secondAttribute="centerY" id="FUh-c2-Fmq"/>
+                                    <constraint firstItem="L7x-cR-xGR" firstAttribute="leading" secondItem="eFx-l9-fKT" secondAttribute="leading" constant="23" id="FjX-3d-z8e"/>
+                                    <constraint firstAttribute="height" constant="64" id="SHQ-98-553"/>
+                                    <constraint firstItem="ecY-7P-LT8" firstAttribute="top" secondItem="eFx-l9-fKT" secondAttribute="top" id="SSf-6m-8UG"/>
+                                    <constraint firstItem="L7x-cR-xGR" firstAttribute="centerY" secondItem="eFx-l9-fKT" secondAttribute="centerY" id="YUd-df-76F"/>
+                                    <constraint firstItem="kKi-JC-zIQ" firstAttribute="centerX" secondItem="eFx-l9-fKT" secondAttribute="centerX" id="hGl-PN-FOh"/>
+                                    <constraint firstAttribute="bottom" secondItem="ecY-7P-LT8" secondAttribute="bottom" id="q9n-4m-d2b"/>
+                                    <constraint firstItem="ecY-7P-LT8" firstAttribute="leading" secondItem="eFx-l9-fKT" secondAttribute="leading" id="rZ3-OS-BcT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jf0-gj-rKt" firstAttribute="leading" secondItem="2lf-ZN-sey" secondAttribute="leading" id="1bg-96-CNb"/>
+                            <constraint firstItem="ZXx-F3-usY" firstAttribute="trailing" secondItem="eFx-l9-fKT" secondAttribute="trailing" id="7dn-wd-N1S"/>
+                            <constraint firstItem="eFx-l9-fKT" firstAttribute="leading" secondItem="ZXx-F3-usY" secondAttribute="leading" id="H7j-Jc-3rE"/>
+                            <constraint firstAttribute="bottom" secondItem="Jf0-gj-rKt" secondAttribute="bottom" id="KfD-Cm-LCJ"/>
+                            <constraint firstItem="Jf0-gj-rKt" firstAttribute="top" secondItem="2lf-ZN-sey" secondAttribute="top" id="LZy-ty-PE5"/>
+                            <constraint firstAttribute="trailing" secondItem="Jf0-gj-rKt" secondAttribute="trailing" id="qdH-KF-bWR"/>
+                            <constraint firstItem="eFx-l9-fKT" firstAttribute="top" secondItem="ZXx-F3-usY" secondAttribute="top" id="xhb-kM-XxN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZXx-F3-usY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapContainerView" destination="Jf0-gj-rKt" id="2tk-cy-dNY"/>
+                        <outlet property="navigationView" destination="eFx-l9-fKT" id="6Ay-Qv-Unc"/>
+                        <outlet property="pathNameLabel" destination="kKi-JC-zIQ" id="82B-jg-gLe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WxK-i4-9IW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="-140"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeBlack" width="21" height="20"/>
+    </resources>
+</document>
