@@ -18,9 +18,22 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
-    
-    var speechVO : [SpeechVO] = []
+    var networkflag : Int = 0
+    var speechVO : [SpeechMeta] = [] {
+        didSet {
+            if micStringLB.text != ""{
+            self.addspeechData(string: self.gsno(self.micStringLB.text))
+                print("카운트세기"+"\(speechVO.count)")
+            }
+            let count = speechVO.count
+             print("speechVO에 담겨저있는 데이터 배열 category \(speechVO[count - 1].response!)")
+             print("speechVO에 담겨저있는 데이터 배열 갯수 \(count)")
+            tableview.reloadData()
+            tableview.scrollToBottom()
+        }
+    }
     let realm = try! Realm()
+
     let mainheaderview = MainHeaderTableViewCell()
     
     
@@ -44,10 +57,12 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
         
         super.viewDidLoad()
         //네트워크
-        let object = realm.objects(SpeachStringresult.self)
-        let speechnetwork = SpeechNM(self)
-        speechnetwork.SpeechSend(comment: object )
-        
+        let firstNM = SpeechNM()
+        print(micStringLB.text )
+        firstNM.FirstSpeechSend(realm: realm.objects(SpeechStringresult.self)){ [weak self] speech in
+            self?.speechVO.append((speech?.meta)!)
+                
+        }
       
         //////////
 
@@ -62,7 +77,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
         tableview.dataSource = self
         tableview.delegate = self
         
-        tableview.scrollToBottom()
+       
         
         micStringLB.isHidden = true
         cancelmicBtn.isHidden = true
@@ -85,7 +100,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
     //Realm 데이터 저장
     func addspeechData(string: String){
         
-        let speechdata = SpeachStringresult()
+        let speechdata = SpeechStringresult()
         speechdata.stringdata = string
         
         try! realm.write {
@@ -125,11 +140,15 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
                     print("녹음타이머 끝")
                    
                     if self.micStringLB.text != "듣고있습니다:)" && self.micStringLB.text != ""{
-                        self.addspeechData(string: self.gsno(self.micStringLB.text))
+                        let speechnetwork = SpeechNM()
+                        speechnetwork.SpeechSend(string: self.gsno(self.micStringLB.text) ){ [weak self] speech in
+                            self?.speechVO.append((speech?.meta)!)
+                            
+                        
+                        }
                         
                     }
-                    self.tableview.reloadData()
-                    self.tableview.scrollToBottom()
+                
                     timer.invalidate()
                     self.stopListening()
                     
@@ -166,9 +185,7 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
             print("오디오엔진 시작을 실패했습니다.")
         }
     }
-    @objc func gototop(){
-        self.tableview.scrollToTop()
-    }
+  
     
     @objc func stopListening() {
         guard isListening else {return}
@@ -231,7 +248,6 @@ class MainViewController: UIViewController,SFSpeechRecognizerDelegate, UIGesture
   
     
     @IBAction func micAction(_ sender: Any) {
-        print(speechVO.count)
         if audioEngine.isRunning == false{
             
             
@@ -300,7 +316,7 @@ extension MainViewController: UITableViewDataSource{
             return 1
         }
         else {
-            return realm.objects(SpeachStringresult.self).count
+            return realm.objects(SpeechStringresult.self).count
         }
         
     }
@@ -318,7 +334,7 @@ extension MainViewController: UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       let object = realm.objects(SpeachStringresult.self)
+       let object = realm.objects(SpeechStringresult.self)
         
         if indexPath.section == 0 {
             
@@ -332,10 +348,12 @@ extension MainViewController: UITableViewDataSource{
             return cell
         }
         else {
+         
+            
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
            
-        
+            
             cell.voiceRecodeLB.text = object[indexPath.row].stringdata
             cell.voiceRecodeLB.sizeToFit()
             cell.didSelectCollectionView = {[weak self] in let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
@@ -373,27 +391,4 @@ extension MainViewController : UITableViewDelegate{
     }
     
 }
-extension MainViewController : NetworkCallBack{
-    func networkResultData(resultData: Any, code: String) {
-        
-        if code == "sendspeech"{
-            
-            speechVO.append(resultData as! SpeechVO)
-            
-        }
-        else if code == "parametererror"{
-            
-            speechVO.append(resultData as! SpeechVO)
-            print(speechVO.last?.result)
-           
-           
-            
-        }
-        
-        
-        
-        
-    }
-    
-    
-}
+
