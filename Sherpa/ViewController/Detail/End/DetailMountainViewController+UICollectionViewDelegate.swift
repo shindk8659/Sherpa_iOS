@@ -33,6 +33,8 @@ extension DetailMountainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TrailCell
         cell.trailModel = trails?[indexPath.item]
+        cell.position = convertedPaths.filter { $0.0 == indexPath.item }
+                                      .map { $0.1 }
         return cell
     }
     

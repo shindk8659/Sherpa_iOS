@@ -25,6 +25,9 @@ extension DetailMountainViewController {
                 let trail = Trail(attributes: trailAttribute, paths: paths)
                 trails.append(trail)
             }
+            if trails.count > 10 {
+                trails.removeSubrange(10...)
+            }
             completion(trails)
         }
     }

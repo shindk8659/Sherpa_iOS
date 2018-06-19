@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+import CoreLocation
 
 class DetailMountainViewController: UIViewController {
 
@@ -22,11 +22,46 @@ class DetailMountainViewController: UIViewController {
     
     var headerSize = CGSize(width: UIScreen.main.bounds.width, height: 480)
     
+    var tokenObject: Access?
+    var wgsModel: GetWGSNM?
+    var convertedPaths = [(Int, Result?)]() {
+        didSet {
+            var pathCount = 0
+            trails?.forEach {
+                pathCount += $0.paths?.count ?? 0
+            }
+            if convertedPaths.count == pathCount {
+                collectionView.reloadData()
+            }
+        }
+    }
+    var locationManager: CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setWGSModels()
         setNavigationBar()
         requestTrails { [weak self] trails in
             self?.trails = trails
+            self?.transformXY(trails: trails)
+        }
+        requestLocationAuth()
+    }
+    
+    func setWGSModels() {
+        let tokenModel = SGISNM(self)
+        tokenModel.getToken()
+        wgsModel = GetWGSNM(self)
+    }
+    
+    func transformXY(trails: [Trail]?) {
+        trails?.enumerated().forEach { index, element in
+            let paths = element.paths
+            paths?.forEach { path in
+                let x = path[0]
+                let y = path[1]
+                wgsModel?.getwgs(x: String(x), y: String(y), token: tokenObject?.accessToken ?? "", index: index)
+            }
         }
     }
     
@@ -41,5 +76,28 @@ class DetailMountainViewController: UIViewController {
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         let leftItem = UIBarButtonItem(customView: backButton)
         navigationItem.leftBarButtonItem = leftItem
+    }
+}
+
+extension DetailMountainViewController: NetworkCallBack {
+    
+    func networkResultData(resultData: Any, code: String) {
+        if code == "success getWGS"{
+            if let resultData = resultData as? (Int, Result?) {
+                convertedPaths.append(resultData)
+            }
+        } else {
+            tokenObject = resultData as? Access
+        }
+    }
+}
+
+extension DetailMountainViewController: CLLocationManagerDelegate {
+    
+    func requestLocationAuth() {
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.startUpdatingLocation()
     }
 }
