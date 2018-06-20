@@ -18,7 +18,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체험, 교육, 공예" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-qG-WBX">
                     <rect key="frame" x="0.0" y="7" width="77" height="15"/>
-                    <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.65000606362336599" green="0.94117647058823528" blue="0.3985102634803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="77" id="8ev-1v-FoT"/>
                         <constraint firstAttribute="height" constant="15" id="r1b-lf-uqB"/>
@@ -84,7 +84,7 @@
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCL-W1-xyI">
                     <rect key="frame" x="35" y="79" width="60" height="1"/>
-                    <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.65098039215686276" green="0.94117647058823528" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="hke-ME-8Bl"/>
                     </constraints>
