@@ -37,6 +37,7 @@
 		CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15620D4C0FF00619841 /* RecommendModel.swift */; };
 		CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */; };
 		FF58434D20D7DD8300BC69CA /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58434C20D7DD8300BC69CA /* ArticleCollectionViewCell.swift */; };
+		FF58436020DA810A00BC69CA /* educationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF58435F20DA810A00BC69CA /* educationCollectionViewCell.xib */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
@@ -78,6 +79,7 @@
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
 		FF58434C20D7DD8300BC69CA /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleCollectionViewCell.swift; path = Sherpa/ViewController/MainTableView/MainBoxCell/ArticleCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		FF58434E20D7DDF800BC69CA /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ArticleCollectionViewCell.xib; path = /Users/danb/Sherpa/Sherpa/Storyboard/ArticleCollectionViewCell.xib; sourceTree = "<absolute>"; };
+		FF58435F20DA810A00BC69CA /* educationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = educationCollectionViewCell.xib; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		FFB8134820D3F7F000A51083 /* DetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListViewController.swift; sourceTree = "<group>"; };
 		FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMountainViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				FFB8134420D3905000A51083 /* Detail.storyboard */,
 				CE30782020D4BD6800BDE64F /* Recommend.storyboard */,
 				FF58434E20D7DDF800BC69CA /* ArticleCollectionViewCell.xib */,
+				FF58435F20DA810A00BC69CA /* educationCollectionViewCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
 				CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */,
 				52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */,
+				FF58436020DA810A00BC69CA /* educationCollectionViewCell.xib in Resources */,
 				52F6D62020C0210A00245C07 /* Main.storyboard in Resources */,
 				FFB8134520D3905000A51083 /* Detail.storyboard in Resources */,
 			);
