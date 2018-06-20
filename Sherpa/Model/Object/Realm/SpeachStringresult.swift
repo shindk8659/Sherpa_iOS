@@ -10,6 +10,6 @@ import Foundation
 import Realm
 import RealmSwift
 
-class SpeechStringresult: Object {
+class SpeechStringResult: Object {
     @objc dynamic var stringdata : String = ""
 }

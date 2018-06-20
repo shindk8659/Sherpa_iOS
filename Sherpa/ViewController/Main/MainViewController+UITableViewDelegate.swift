@@ -6,4 +6,8 @@
 //  Copyright © 2018년 신동규. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension MainViewController : UITableViewDelegate {
+    
+}

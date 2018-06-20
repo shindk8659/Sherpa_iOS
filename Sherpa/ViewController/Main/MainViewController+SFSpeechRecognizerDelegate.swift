@@ -6,4 +6,11 @@
 //  Copyright © 2018년 신동규. All rights reserved.
 //
 
-import Foundation
+import Speech
+
+extension MainViewController: SFSpeechRecognizerDelegate {
+    
+    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        micBtn.isEnabled = available
+    }
+}

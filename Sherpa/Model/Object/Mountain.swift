@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Mountain: Codable {
+protocol ModelTransformable {
+    
+}
+
+struct Mountain: Codable, ModelTransformable {
     var code: String
     var name: String
     var height: Int

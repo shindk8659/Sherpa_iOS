@@ -19,38 +19,28 @@ class WGSVO :Mappable{
     var errCd: Int?
     var trId: String?
     
-    required init?(map: Map) {
-        
-    }
+    required init?(map: Map) { }
+    
     func mapping(map: Map) {
         id <- map["id"]
         result <- map["result"]
         errMsg <- map["errMsg"]
         errCd <- map["errCd"]
         trId <- map["trId"]
-      
     }
 }
+
 class Result: Mappable {
     
     var posX : Float64?
     var posY : Float64?
     
-   
-    
-    required init?(map: Map) {
-        
-        
-    }
+    required init?(map: Map) { }
     
     func mapping(map: Map) {
-        
         posX <- map["posX"]
         posY <- map["posY"]
-        
-    
     }
-
 }
 
 

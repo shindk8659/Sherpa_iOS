@@ -42,8 +42,5 @@ class Access:Mappable{
    func mapping(map: Map) {
         accessTimeout <- map["accessTimeout"]
         accessToken <- map["accessToken"]
-    
     }
-    
-    
 }

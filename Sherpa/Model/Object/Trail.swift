@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TrailAttribute {
+struct TrailAttribute: ModelTransformable {
     var pathName: String?
     var difficulty: String?
     var ascendTime: Int?
@@ -24,7 +24,7 @@ struct TrailAttribute {
     }
 }
 
-struct Trail {
+struct Trail: ModelTransformable {
     var attributes: TrailAttribute?
     var paths: [[Double]]?
 }

@@ -15,6 +15,10 @@ enum Category: String {
     case education
     case trail
     case weather
+    
+    static var allValues: [Category] {
+        return [.none, .news, .mountain, .education, .trail, .weather]
+    }
 }
 
 

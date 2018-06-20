@@ -8,31 +8,12 @@
 
 import Foundation
 
-
-struct SpeechVO: Codable {
-    var result: Int?
-    var meta: SpeechMeta?
-}
-
-
-struct SpeechMeta:Codable{
-    
-    var Category:String?
-    var response: [SpeechResponse]?
-    
-    
-    
-}
-struct SpeechResponse:Codable{
-    
-    var code: String?
-    var name: String?
-    var height: Int?
-    var address: String?
-    var management: String?
-    var detail: String?
-    var summary: String?
-    var imageURL:String?
-    var isFamous: Int?
-    
-}
+//struct SpeechVO<T: Codable>: Codable {
+//    var result: Int?
+//    var meta: SpeechResponse<T>?
+//}
+//
+//struct SpeechResponse<T: Codable>: Codable {
+//    var Category: String?
+//    var response: T?
+//}
