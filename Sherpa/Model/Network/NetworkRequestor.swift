@@ -10,6 +10,10 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+enum NetworkError: Error {
+    case failure
+}
+
 
 struct NetworkRequestor {
     
@@ -28,6 +32,10 @@ struct NetworkRequestor {
             switch response.result {
             case .success:
                 if let data = response.data {
+                    guard JSON(data)["result"].intValue == 200 else {
+                        completion?(nil, NetworkError.failure)
+                        return
+                    }
                     let jsonString = JSON(data)["meta"].description
                     let jsonData = jsonString.data(using: .utf8) ?? Data()
                     do {
@@ -49,6 +57,10 @@ struct NetworkRequestor {
             case .success:
                 if let data = response.data {
                     let parsedData = JSON(data)
+                    guard JSON(data)["result"].intValue == 200 else {
+                        completion?(nil, NetworkError.failure)
+                        return
+                    }
                     completion?(parsedData, nil)
                 }
             case .failure(let error):
