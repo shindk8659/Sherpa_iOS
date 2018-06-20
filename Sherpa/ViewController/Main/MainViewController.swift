@@ -322,70 +322,30 @@ extension MainViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.section == 0{
-            return 206
-        }
-        else{
-            return 280
-        }
-        
+        return indexPath.section == 0 ? 206 : 280
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       let object = realm.objects(SpeechStringresult.self)
+        let object = realm.objects(SpeechStringresult.self)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
         
-        if indexPath.section == 0 {
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MainHeaderCell") as! MainHeaderTableViewCell
-            cell.didSelectTableView = {[weak self] in let nextview = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
-                self?.micStringLB.text = ""
-                self?.stopListening()
-                self?.navigationController?.pushViewController(nextview, animated: true)
-            }
-            
-            return cell
+        
+        cell.voiceRecodeLB.text = object[indexPath.row].stringdata
+        cell.voiceRecodeLB.sizeToFit()
+        cell.didSelectCollectionView = {[weak self] in
+            let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
+            self?.micStringLB.text = ""
+            self?.stopListening()
+            self?.navigationController?.pushViewController(nextView, animated: true)
         }
-        else {
-         
-            
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BoxCell") as! MainCVTableViewCell
-           
-            
-            cell.voiceRecodeLB.text = object[indexPath.row].stringdata
-            cell.voiceRecodeLB.sizeToFit()
-            cell.didSelectCollectionView = {[weak self] in let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
-                self?.micStringLB.text = ""
-                self?.stopListening()
-                
-                self?.navigationController?.pushViewController(nextView, animated: true)
-                
-            }
-            
-            
-            return  cell
-            
-        }
-        
-        
+
+        return  cell
     }
-    
-    
 }
 extension MainViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    if tableView == mainheaderview.headertv{
-        
-       
-        let nextView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Infomation") as! InfoViewController
-        
-        self.navigationController?.pushViewController(nextView, animated: true)
-        
-    }
 
     
     }
