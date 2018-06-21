@@ -18,7 +18,8 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var micBtn: UIButton!
     @IBOutlet weak var cancelmicBtn: UIButton!
     @IBOutlet weak var micStringLB: UILabel!
-
+    @IBOutlet weak var recommendLabel: UILabel!
+    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko-KR"))
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -68,23 +69,30 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         */
         
         speechRecognizer?.delegate = self
-        
-        view.addSubview(activityIndicatorView)
-        view.addSubview(micimg)
-        micimg.isHidden = true
-        
-        micStringLB.isHidden = true
-        cancelmicBtn.isHidden = true
-        
-        //tableview 제스처 시 원래 화면으로 돌리기
-        let tvGesture = UIPanGestureRecognizer(target: self, action: #selector(stopListening))
-        tvGesture.delegate = self
-        tableview.addGestureRecognizer(tvGesture)
+        updateUI()
+        addGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         stopListening()
+    }
+    
+    func updateUI() {
+        view.addSubview(activityIndicatorView)
+        view.addSubview(micimg)
+        
+        micimg.isHidden = true
+        micStringLB.isHidden = true
+        cancelmicBtn.isHidden = true
+        
+        recommendLabel.layer.borderColor = #colorLiteral(red: 0.02708645537, green: 0.8015219569, blue: 0.723786056, alpha: 1)
+    }
+    
+    func addGesture() {
+        let tvGesture = UIPanGestureRecognizer(target: self, action: #selector(stopListening))
+        tvGesture.delegate = self
+        tableview.addGestureRecognizer(tvGesture)
     }
     
     //Realm 데이터 저장
@@ -130,9 +138,9 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
                     guard let `self` = self else {
                         return
                     }
-                    if self.micStringLB.text != "듣고있습니다:)" && self.micStringLB.text != "" {
+                    if self.micStringLB.text != "듣고있어요 :)" && self.micStringLB.text != "" {
                         let speechNetwork = SpeechNM()
-                        speechNetwork.sendSpeech(string: self.micStringLB.text ?? "") { model, error in
+                        speechNetwork.sendSpeech(string: self.micStringLB.text ?? "") { category, model, error in
                             guard error == nil else {
                                 return
                             }
