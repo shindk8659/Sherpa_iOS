@@ -19,7 +19,7 @@ class DetailListCell: UITableViewCell {
             mountainNameLabel.text = model?.name
             mountainDescriptionLabel.text = model?.detail
             if let url = URL(string: "http://" + (model?.imageURL ?? "")) {
-                mountainImageView.kf.setImage(with: url)
+                mountainImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "mountainDetault"))
             }
         }
     }

@@ -13,12 +13,11 @@ import Kingfisher
 extension UITableView {
     
     func scrollToBottom() {
-        let rows = self.numberOfRows(inSection: 1)
-        
+        let rows = numberOfRows(inSection: 0)
         if rows > 0 {
-            DispatchQueue.main.async {
-                let indexPath = IndexPath(row: rows - 1, section: 1)
-                self.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            DispatchQueue.main.async { [weak self] in
+                let indexPath = IndexPath(row: rows - 1, section: 0)
+                self?.scrollToRow(at: indexPath, at: .bottom, animated: false)
             }
         }
     }
@@ -26,9 +25,9 @@ extension UITableView {
         let rows = self.numberOfRows(inSection: 0)
         
         if rows > 0 {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 let indexPath = IndexPath(row: rows - 1, section: 0)
-                self.scrollToRow(at: indexPath, at: .top, animated: true)
+                self?.scrollToRow(at: indexPath, at: .top, animated: true)
             }
         }
     }
@@ -118,6 +117,24 @@ extension String {
         else{return false}
     }
 }
+extension SpeechNM{
+    //옵셔널 String을 해제하는데 값이 nil이면 ""을 반환
+    func gsno(_ data: String?) -> String {
+        guard let str = data else {
+            return ""
+        }
+        return str
+    }
+    
+    //옵셔널 Int를 해제하는데 값이 nil이면 0을 반환
+    func gino(_ data: Int?) -> Int {
+        guard let num = data else {
+            return 0
+        }
+        return num
+    }
+    
+}
 
 extension UIViewController {
     
@@ -159,6 +176,7 @@ extension UIViewController {
         }
         return num
     }
+    
     
     func simpleAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)

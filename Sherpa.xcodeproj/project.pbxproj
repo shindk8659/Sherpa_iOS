@@ -11,15 +11,11 @@
 		521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DA20C90489003F8833 /* RecommendViewController.swift */; };
 		521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B80DC20C938E2003F8833 /* MainViewController.swift */; };
 		5250773320CCD83C009EA147 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5250773220CCD83C009EA147 /* extension.swift */; };
-		52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */; };
 		52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */; };
 		52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */; };
-		52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972AC20D4D59B0000988E /* NetworkCallBack.swift */; };
-		52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972AE20D4D5B90000988E /* NetworkDelegate.swift */; };
 		52C972B120D4D8010000988E /* SpeechNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B020D4D8010000988E /* SpeechNM.swift */; };
 		52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B220D4D8A20000988E /* SpeechVO.swift */; };
 		52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C972B520D4E4E50000988E /* SpeachStringresult.swift */; };
-		52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */; };
 		52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E0CD7B20C67F00000B8489 /* InfoViewController.swift */; };
 		52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6D61A20C0210A00245C07 /* AppDelegate.swift */; };
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
@@ -31,14 +27,33 @@
 		CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */; };
 		CE35BBC920D650000068C189 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC820D650000068C189 /* Mountain.swift */; };
 		CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */; };
+		CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCC20D68F1A0068C189 /* DetailDescriptionReusableView.swift */; };
+		CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBCE20D694B40068C189 /* TrailCell.swift */; };
+		CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD020D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift */; };
+		CE35BBD520D695F00068C189 /* Trail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD420D695F00068C189 /* Trail.swift */; };
+		CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD620D696490068C189 /* NetworkRequestor.swift */; };
+		CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBD820D6969D0068C189 /* APIRouter.swift */; };
+		CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBDA20D6CF7E0068C189 /* DetailMountainViewController+Network.swift */; };
 		CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */; };
 		CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
 		CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15620D4C0FF00619841 /* RecommendModel.swift */; };
 		CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */; };
-		FF58434D20D7DD8300BC69CA /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58434C20D7DD8300BC69CA /* ArticleCollectionViewCell.swift */; };
-		FF58436020DA810A00BC69CA /* EducationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF58435F20DA810A00BC69CA /* EducationCollectionViewCell.xib */; };
-		FF58436220DA93BC00BC69CA /* EducationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF58436120DA93BC00BC69CA /* EducationCollectionViewCell.swift */; };
+		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
+		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
+		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
+		CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A720D810DB00B261BF /* GetWGSNM.swift */; };
+		CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9AA20D810ED00B261BF /* GeoConverter.swift */; };
+		CED9E9AE20D9613600B261BF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9AD20D9613600B261BF /* MapViewController.swift */; };
+		CED9E9B120D9615D00B261BF /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9E9B020D9615D00B261BF /* Map.storyboard */; };
+		CED9E9B620D96BC000B261BF /* NetworkCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9B520D96BC000B261BF /* NetworkCallBack.swift */; };
+		CED9E9B820D96BFA00B261BF /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9B720D96BFA00B261BF /* NetworkDelegate.swift */; };
+		CED9E9BA20D96DD300B261BF /* MainViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9B920D96DD300B261BF /* MainViewController+UITableViewDelegate.swift */; };
+		CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9BB20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift */; };
+		CED9E9BE20D9710400B261BF /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9BD20D9710400B261BF /* Collection+Extension.swift */; };
+		CED9E9C020D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */; };
+		CED9E9C220D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */; };
+		CED9E9C420D97AA400B261BF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9C320D97AA400B261BF /* Category.swift */; };
 		FFB8134520D3905000A51083 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB8134420D3905000A51083 /* Detail.storyboard */; };
 		FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134820D3F7F000A51083 /* DetailListViewController.swift */; };
 		FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */; };
@@ -48,15 +63,11 @@
 		521B80DA20C90489003F8833 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		521B80DC20C938E2003F8833 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5250773220CCD83C009EA147 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
-		52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCVTableViewCell.swift; sourceTree = "<group>"; };
 		52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewCell.swift; sourceTree = "<group>"; };
-		52C972AC20D4D59B0000988E /* NetworkCallBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
-		52C972AE20D4D5B90000988E /* NetworkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
 		52C972B020D4D8010000988E /* SpeechNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechNM.swift; sourceTree = "<group>"; };
 		52C972B220D4D8A20000988E /* SpeechVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVO.swift; sourceTree = "<group>"; };
 		52C972B520D4E4E50000988E /* SpeachStringresult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachStringresult.swift; sourceTree = "<group>"; };
-		52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		52E0CD7B20C67F00000B8489 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		52F6D61720C0210A00245C07 /* Sherpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sherpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F6D61A20C0210A00245C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,17 +82,35 @@
 		CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailListViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		CE35BBC820D650000068C189 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 		CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailListViewController+Network.swift"; sourceTree = "<group>"; };
+		CE35BBCC20D68F1A0068C189 /* DetailDescriptionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescriptionReusableView.swift; sourceTree = "<group>"; };
+		CE35BBCE20D694B40068C189 /* TrailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailCell.swift; sourceTree = "<group>"; };
+		CE35BBD020D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailMountainViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		CE35BBD420D695F00068C189 /* Trail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trail.swift; sourceTree = "<group>"; };
+		CE35BBD620D696490068C189 /* NetworkRequestor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestor.swift; sourceTree = "<group>"; };
+		CE35BBD820D6969D0068C189 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		CE35BBDA20D6CF7E0068C189 /* DetailMountainViewController+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailMountainViewController+Network.swift"; sourceTree = "<group>"; };
 		CE89B15020D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CE89B15220D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecommendViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
 		CE89B15620D4C0FF00619841 /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
+		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
+		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
+		CED9E9A720D810DB00B261BF /* GetWGSNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetWGSNM.swift; sourceTree = "<group>"; };
+		CED9E9AA20D810ED00B261BF /* GeoConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoConverter.swift; sourceTree = "<group>"; };
+		CED9E9AD20D9613600B261BF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CED9E9B020D9615D00B261BF /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		CED9E9B520D96BC000B261BF /* NetworkCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCallBack.swift; sourceTree = "<group>"; };
+		CED9E9B720D96BFA00B261BF /* NetworkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
+		CED9E9B920D96DD300B261BF /* MainViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		CED9E9BB20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		CED9E9BD20D9710400B261BF /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+SFSpeechRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		CED9E9C320D97AA400B261BF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		DB497547A79501BE29D12E20 /* Pods_Sherpa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sherpa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3007CEC71A6ED4CD668E80A /* Pods-Sherpa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.release.xcconfig"; sourceTree = "<group>"; };
-		FF58434C20D7DD8300BC69CA /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleCollectionViewCell.swift; path = Sherpa/ViewController/MainTableView/MainBoxCell/ArticleCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		FF58434E20D7DDF800BC69CA /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ArticleCollectionViewCell.xib; path = /Users/danb/Sherpa/Sherpa/Storyboard/ArticleCollectionViewCell.xib; sourceTree = "<absolute>"; };
-		FF58435F20DA810A00BC69CA /* EducationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationCollectionViewCell.xib; sourceTree = "<group>"; };
-		FF58436120DA93BC00BC69CA /* EducationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationCollectionViewCell.swift; sourceTree = "<group>"; };
 		FFB8134420D3905000A51083 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		FFB8134820D3F7F000A51083 /* DetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListViewController.swift; sourceTree = "<group>"; };
 		FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMountainViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +133,7 @@
 			children = (
 				5250773220CCD83C009EA147 /* extension.swift */,
 				CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */,
+				CED9E9BD20D9710400B261BF /* Collection+Extension.swift */,
 			);
 			path = CustomExtension;
 			sourceTree = "<group>";
@@ -111,10 +141,11 @@
 		527F260220C3F8E900F4ADB5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				52E0CD7820C67E35000B8489 /* MainTableView */,
+				52E0CD7820C67E35000B8489 /* Main */,
 				52E0CD7B20C67F00000B8489 /* InfoViewController.swift */,
 				CE89B14F20D4BE5500619841 /* Recommend */,
 				CE35BBC320D64A320068C189 /* Detail */,
+				CED9E9AF20D9613D00B261BF /* Map */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -126,8 +157,7 @@
 				52F6D61E20C0210A00245C07 /* Main.storyboard */,
 				FFB8134420D3905000A51083 /* Detail.storyboard */,
 				CE30782020D4BD6800BDE64F /* Recommend.storyboard */,
-				FF58434E20D7DDF800BC69CA /* ArticleCollectionViewCell.xib */,
-				FF58435F20DA810A00BC69CA /* EducationCollectionViewCell.xib */,
+				CED9E9B020D9615D00B261BF /* Map.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -145,7 +175,7 @@
 		52C972A820D4D4D10000988E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52C972AB20D4D5750000988E /* Protocol */,
+				CED9E9B420D96BC000B261BF /* Protocol */,
 				52C972AA20D4D4E20000988E /* Network */,
 				52C972A920D4D4DB0000988E /* Object */,
 			);
@@ -157,7 +187,11 @@
 			children = (
 				52C972B420D4E4C00000988E /* Realm */,
 				52C972B220D4D8A20000988E /* SpeechVO.swift */,
+				CED9E9A220D810B000B261BF /* SGISVO.swift */,
+				CED9E9A320D810B000B261BF /* WGSVO.swift */,
 				CE35BBC820D650000068C189 /* Mountain.swift */,
+				CE35BBD420D695F00068C189 /* Trail.swift */,
+				CED9E9C320D97AA400B261BF /* Category.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -165,18 +199,14 @@
 		52C972AA20D4D4E20000988E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				52C972AE20D4D5B90000988E /* NetworkDelegate.swift */,
 				52C972B020D4D8010000988E /* SpeechNM.swift */,
+				CED9E9A720D810DB00B261BF /* GetWGSNM.swift */,
+				CED9E9A620D810DB00B261BF /* SGISNM.swift */,
+				CED9E9B720D96BFA00B261BF /* NetworkDelegate.swift */,
+				CE35BBD620D696490068C189 /* NetworkRequestor.swift */,
+				CE35BBD820D6969D0068C189 /* APIRouter.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		52C972AB20D4D5750000988E /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				52C972AC20D4D59B0000988E /* NetworkCallBack.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		52C972B420D4E4C00000988E /* Realm */ = {
@@ -187,23 +217,17 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
-		52E0CD7820C67E35000B8489 /* MainTableView */ = {
+		52E0CD7820C67E35000B8489 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				521B80DC20C938E2003F8833 /* MainViewController.swift */,
+				CED9E9B920D96DD300B261BF /* MainViewController+UITableViewDelegate.swift */,
+				CED9E9BB20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift */,
+				CED9E9BF20D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift */,
+				CED9E9C120D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift */,
 				52E0CD7A20C67E5C000B8489 /* MainBoxCell */,
-				52E0CD7920C67E47000B8489 /* MainHeaderCell */,
 			);
-			path = MainTableView;
-			sourceTree = "<group>";
-		};
-		52E0CD7920C67E47000B8489 /* MainHeaderCell */ = {
-			isa = PBXGroup;
-			children = (
-				52AA2F3F20C416F700BE1D31 /* MainHeaderTableViewCell.swift */,
-				52E0CD7620C6753C000B8489 /* HeaderTableViewCell.swift */,
-			);
-			path = MainHeaderCell;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		52E0CD7A20C67E5C000B8489 /* MainBoxCell */ = {
@@ -211,8 +235,6 @@
 			children = (
 				52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */,
 				52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */,
-				FF58434C20D7DD8300BC69CA /* ArticleCollectionViewCell.swift */,
-				FF58436120DA93BC00BC69CA /* EducationCollectionViewCell.swift */,
 			);
 			path = MainBoxCell;
 			sourceTree = "<group>";
@@ -238,6 +260,7 @@
 		52F6D61920C0210A00245C07 /* Sherpa */ = {
 			isa = PBXGroup;
 			children = (
+				CED9E9AC20D810F500B261BF /* Common */,
 				52C972A820D4D4D10000988E /* Model */,
 				CE35BBC020D4B8DD0068C189 /* Base */,
 				5250773120CCD82B009EA147 /* CustomExtension */,
@@ -276,13 +299,33 @@
 		CE35BBC320D64A320068C189 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CE35BBD220D695D00068C189 /* List */,
+				CE35BBD320D695D90068C189 /* End */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CE35BBD220D695D00068C189 /* List */ = {
+			isa = PBXGroup;
+			children = (
 				FFB8134820D3F7F000A51083 /* DetailListViewController.swift */,
-				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
 				CE35BBC420D64BED0068C189 /* DetailListCell.swift */,
 				CE35BBC620D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift */,
 				CE35BBCA20D659CF0068C189 /* DetailListViewController+Network.swift */,
 			);
-			path = Detail;
+			path = List;
+			sourceTree = "<group>";
+		};
+		CE35BBD320D695D90068C189 /* End */ = {
+			isa = PBXGroup;
+			children = (
+				FFB8134A20D3FC1F00A51083 /* DetailMountainViewController.swift */,
+				CE35BBCC20D68F1A0068C189 /* DetailDescriptionReusableView.swift */,
+				CE35BBCE20D694B40068C189 /* TrailCell.swift */,
+				CE35BBD020D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift */,
+				CE35BBDA20D6CF7E0068C189 /* DetailMountainViewController+Network.swift */,
+			);
+			path = End;
 			sourceTree = "<group>";
 		};
 		CE89B14F20D4BE5500619841 /* Recommend */ = {
@@ -297,6 +340,31 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
+		CED9E9AC20D810F500B261BF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CED9E9AA20D810ED00B261BF /* GeoConverter.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CED9E9AF20D9613D00B261BF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CED9E9AD20D9613600B261BF /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		CED9E9B420D96BC000B261BF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CED9E9B520D96BC000B261BF /* NetworkCallBack.swift */,
+			);
+			name = Protocol;
+			path = ../../../../../Downloads/Sherpa/Sherpa/Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +377,7 @@
 				52F6D61420C0210A00245C07 /* Frameworks */,
 				52F6D61520C0210A00245C07 /* Resources */,
 				1D727BD39D8411A0DC83299A /* [CP] Embed Pods Frameworks */,
+				C14E5D200F5D77D0C7500B13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,9 +429,9 @@
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
 				CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */,
 				52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */,
-				FF58436020DA810A00BC69CA /* EducationCollectionViewCell.xib in Resources */,
 				52F6D62020C0210A00245C07 /* Main.storyboard in Resources */,
 				FFB8134520D3905000A51083 /* Detail.storyboard in Resources */,
+				CED9E9B120D9615D00B261BF /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +490,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C14E5D200F5D77D0C7500B13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -428,34 +517,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED9E9B820D96BFA00B261BF /* NetworkDelegate.swift in Sources */,
 				52C972B120D4D8010000988E /* SpeechNM.swift in Sources */,
+				CED9E9C220D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift in Sources */,
 				CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */,
-				52AA2F4020C416F700BE1D31 /* MainHeaderTableViewCell.swift in Sources */,
+				CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */,
 				FFB8134920D3F7F000A51083 /* DetailListViewController.swift in Sources */,
-				52C972AF20D4D5B90000988E /* NetworkDelegate.swift in Sources */,
+				CED9E9AB20D810ED00B261BF /* GeoConverter.swift in Sources */,
+				CE35BBD920D6969D0068C189 /* APIRouter.swift in Sources */,
+				CE35BBDB20D6CF7E0068C189 /* DetailMountainViewController+Network.swift in Sources */,
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
+				CED9E9BE20D9710400B261BF /* Collection+Extension.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
 				CE35BBC920D650000068C189 /* Mountain.swift in Sources */,
 				CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */,
+				CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */,
 				CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */,
 				CE35BBCB20D659CF0068C189 /* DetailListViewController+Network.swift in Sources */,
+				CED9E9B620D96BC000B261BF /* NetworkCallBack.swift in Sources */,
 				52AA2F4220C4170700BE1D31 /* MainCVTableViewCell.swift in Sources */,
-				FF58434D20D7DD8300BC69CA /* ArticleCollectionViewCell.swift in Sources */,
+				CED9E9BA20D96DD300B261BF /* MainViewController+UITableViewDelegate.swift in Sources */,
 				CE89B15320D4BE9700619841 /* RecommendViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */,
+				CED9E9AE20D9613600B261BF /* MapViewController.swift in Sources */,
+				CE35BBCF20D694B40068C189 /* TrailCell.swift in Sources */,
 				5250773320CCD83C009EA147 /* extension.swift in Sources */,
+				CE35BBD520D695F00068C189 /* Trail.swift in Sources */,
 				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
+				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
+				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
-				52C972AD20D4D59B0000988E /* NetworkCallBack.swift in Sources */,
+				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
 				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
-				FF58436220DA93BC00BC69CA /* EducationCollectionViewCell.swift in Sources */,
 				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
+				CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
-				52E0CD7720C6753C000B8489 /* HeaderTableViewCell.swift in Sources */,
+				CED9E9C020D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift in Sources */,
 				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
+				CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */,
+				CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */,
 				FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */,
 				52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */,
+				CED9E9C420D97AA400B261BF /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,8 +705,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,8 +725,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				INFOPLIST_FILE = "$(SRCROOT)/Sherpa/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

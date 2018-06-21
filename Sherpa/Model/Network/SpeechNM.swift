@@ -9,60 +9,87 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import Realm
 import RealmSwift
+import Realm
 
-class SpeechNM: NetworkDelegate{
+enum SpeechError: Error {
+    case emptyCategory
+}
+
+class SpeechNM {
     
-    
-    func SpeechSend(comment: Results<SpeachStringresult>){
-        print("send실행")
-      let URL = "\(baseURL)/sendVoice"
+    /*
+    func sendPreviousSpeeches(realm: Results<SpeechStringResult>, completion: @escaping (SpeechVO?) -> Void) {
         
-        let concurrentQueue = DispatchQueue(label: "speechload", attributes: .concurrent)
+        print("시작")
         
-        concurrentQueue.sync {
-            for i in 0..<comment.count{
-                let parameter = [
-                    "content" : comment[i].stringdata
-                ]
-                Alamofire.request(URL, method: .get, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseObject{
-            (response: DataResponse<SpeechVO>) in
-
-            switch response.result{
-            case .success :
-                guard let value = response.result.value else {
-                    self.delegate.networkFailed(msg: "")
-                    return
-                }
-                if value.result == 200 {
-
-                    print("네트워크 접속 성공")
-                    self.delegate.networkResultData(resultData: value, code: "sendspeech")
-
-                }
-                else{
-                    print("파라미터오류")
-                    print(value.result)
-                    self.delegate.networkResultData(resultData: value, code: "parametererror")
-                    
-                }
-
-                break
-            case .failure(let err) :
-
-                print("네트워크 접속 실패")
-                print(err.localizedDescription)
-                self.delegate.networkFailed(msg: "")
-                break
-            }
-                }
-                
-            }
+        let url = "http://52.78.104.4:8080/sendVoice"
+        
+        for i in 0..<realm.count {
             
+            let parameters = ["input": realm[i].stringdata]
+            
+            Alamofire.request(url, parameters: parameters).responseJSON { response in
+                switch response.result{
+                case .success:
+                    if let data = response.data {
+                        do {
+                            if JSON(data)["result"] == 200 {
+                                let speech = try JSONDecoder().decode(SpeechVO.self, from: data)
+                                completion(speech)
+                            } else {
+                                print("실패")
+                            }
+                            
+                        } catch let error {
+                            print(error)
+                        }
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
-        
-        
     }
+    */
     
+    func sendSpeech(string: String, completion: @escaping (Category?, [ModelTransformable]?, Error?) -> Void) {
+        
+        let apiRouter = APIRouter(url: "/sendVoice", method: .get, parameters: ["input": string])
+        NetworkRequestor(with: apiRouter).requestJSON { json, error in
+            guard error == nil else {
+                completion(nil, nil, error)
+                return
+            }
+            guard let category = Category.allValues.first(where: { category in
+                category.value == (json?["meta"]["Category"].stringValue ?? "")
+            }) else {
+                completion(nil, nil, SpeechError.emptyCategory)
+                return
+            }
+
+            let jsonString = json?["meta"]["response"].description
+            let jsonData = jsonString?.data(using: .utf8) ?? Data()
+            do {
+                switch category {
+                case .education:
+                    break
+                case .mountain:
+                    let result = try JSONDecoder().decode([Mountain].self, from: jsonData)
+                    completion(.mountain, result, nil)
+                case .news:
+                    break
+                case .trail:
+                    break
+                case .weather:
+                    break
+                default:
+                    break
+                }
+            } catch let error {
+                completion(nil, nil, error)
+            }
+        }
+    }
 }

@@ -8,11 +8,13 @@
 
 import UIKit
 
-class BaseNavigationViewController: UINavigationController {
+class BaseNavigationViewController: UINavigationController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        
+        interactivePopGestureRecognizer?.delegate = self
     }
     
     func setNavigationBar() {
