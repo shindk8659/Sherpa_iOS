@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/danb/Sherpa/Sherpa/Storyboard/ArticleCollectionViewCell.xib">
+   </FileRef>
+   <FileRef
       location = "group:Sherpa.xcodeproj">
    </FileRef>
    <FileRef
