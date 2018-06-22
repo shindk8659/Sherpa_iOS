@@ -74,12 +74,14 @@ class SpeechNM {
             do {
                 switch category {
                 case .education:
-                    break
+                    let result = try JSONDecoder().decode([Education].self, from: jsonData)
+                    completion(.education, result, nil)
                 case .mountain:
                     let result = try JSONDecoder().decode([Mountain].self, from: jsonData)
                     completion(.mountain, result, nil)
                 case .news:
-                    break
+                    let result = try JSONDecoder().decode([Article].self, from: jsonData)
+                    completion(.news, result, nil)
                 case .trail:
                     break
                 case .weather:
@@ -88,6 +90,7 @@ class SpeechNM {
                     break
                 }
             } catch let error {
+                print(error)
                 completion(nil, nil, error)
             }
         }

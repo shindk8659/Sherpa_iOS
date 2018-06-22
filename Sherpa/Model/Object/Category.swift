@@ -19,6 +19,14 @@ enum Category: String {
     static var allValues: [Category] {
         return [.none, .news, .mountain, .education, .trail, .weather]
     }
+    
+    var cellIdentifier: String {
+        switch self {
+        case .education: return "EducationCollectionViewCell"
+        case .news: return "ArticleCollectionViewCell"
+        default: return ""
+        }
+    }
 }
 
 

@@ -21,6 +21,12 @@
 		52F6D62020C0210A00245C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D61E20C0210A00245C07 /* Main.storyboard */; };
 		52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62120C0210C00245C07 /* Assets.xcassets */; };
 		52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F6D62320C0210C00245C07 /* LaunchScreen.storyboard */; };
+		CE18F22E20DC0A130016EC8E /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE18F22C20DC0A130016EC8E /* ArticleCollectionViewCell.xib */; };
+		CE18F22F20DC0A130016EC8E /* EducationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE18F22D20DC0A130016EC8E /* EducationCollectionViewCell.xib */; };
+		CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18F23020DC0A2D0016EC8E /* EducationCollectionViewCell.swift */; };
+		CE18F23320DC0A2D0016EC8E /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18F23120DC0A2D0016EC8E /* ArticleCollectionViewCell.swift */; };
+		CE18F23520DC0D100016EC8E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18F23420DC0D100016EC8E /* Article.swift */; };
+		CE18F23920DC1DD60016EC8E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18F23820DC1DD60016EC8E /* Date+Extension.swift */; };
 		CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE30782020D4BD6800BDE64F /* Recommend.storyboard */; };
 		CE35BBC220D4B8EE0068C189 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */; };
 		CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35BBC420D64BED0068C189 /* DetailListCell.swift */; };
@@ -39,6 +45,7 @@
 		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
 		CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15620D4C0FF00619841 /* RecommendModel.swift */; };
 		CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */; };
+		CE962DB220DC235300B5A831 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE962DB120DC235300B5A831 /* Education.swift */; };
 		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
 		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
 		CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A620D810DB00B261BF /* SGISNM.swift */; };
@@ -76,6 +83,12 @@
 		52F6D62420C0210C00245C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52F6D62620C0210C00245C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B0B0E74D6F6D9813D81EB24 /* Pods-Sherpa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sherpa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sherpa/Pods-Sherpa.debug.xcconfig"; sourceTree = "<group>"; };
+		CE18F22C20DC0A130016EC8E /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE18F22D20DC0A130016EC8E /* EducationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EducationCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE18F23020DC0A2D0016EC8E /* EducationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EducationCollectionViewCell.swift; path = Sherpa/ViewController/MainTableView/MainBoxCell/EducationCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CE18F23120DC0A2D0016EC8E /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleCollectionViewCell.swift; path = Sherpa/ViewController/MainTableView/MainBoxCell/ArticleCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CE18F23420DC0D100016EC8E /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		CE18F23820DC1DD60016EC8E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		CE30782020D4BD6800BDE64F /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
 		CE35BBC120D4B8EE0068C189 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		CE35BBC420D64BED0068C189 /* DetailListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListCell.swift; sourceTree = "<group>"; };
@@ -94,6 +107,7 @@
 		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
 		CE89B15620D4C0FF00619841 /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CE962DB120DC235300B5A831 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
 		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
 		CED9E9A620D810DB00B261BF /* SGISNM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISNM.swift; sourceTree = "<group>"; };
@@ -134,6 +148,7 @@
 				5250773220CCD83C009EA147 /* extension.swift */,
 				CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */,
 				CED9E9BD20D9710400B261BF /* Collection+Extension.swift */,
+				CE18F23820DC1DD60016EC8E /* Date+Extension.swift */,
 			);
 			path = CustomExtension;
 			sourceTree = "<group>";
@@ -158,6 +173,8 @@
 				FFB8134420D3905000A51083 /* Detail.storyboard */,
 				CE30782020D4BD6800BDE64F /* Recommend.storyboard */,
 				CED9E9B020D9615D00B261BF /* Map.storyboard */,
+				CE18F22C20DC0A130016EC8E /* ArticleCollectionViewCell.xib */,
+				CE18F22D20DC0A130016EC8E /* EducationCollectionViewCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -192,6 +209,8 @@
 				CE35BBC820D650000068C189 /* Mountain.swift */,
 				CE35BBD420D695F00068C189 /* Trail.swift */,
 				CED9E9C320D97AA400B261BF /* Category.swift */,
+				CE18F23420DC0D100016EC8E /* Article.swift */,
+				CE962DB120DC235300B5A831 /* Education.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -233,6 +252,8 @@
 		52E0CD7A20C67E5C000B8489 /* MainBoxCell */ = {
 			isa = PBXGroup;
 			children = (
+				CE18F23120DC0A2D0016EC8E /* ArticleCollectionViewCell.swift */,
+				CE18F23020DC0A2D0016EC8E /* EducationCollectionViewCell.swift */,
 				52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */,
 				52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */,
 			);
@@ -427,7 +448,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
+				CE18F22E20DC0A130016EC8E /* ArticleCollectionViewCell.xib in Resources */,
 				CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */,
+				CE18F22F20DC0A130016EC8E /* EducationCollectionViewCell.xib in Resources */,
 				52F6D62220C0210C00245C07 /* Assets.xcassets in Resources */,
 				52F6D62020C0210A00245C07 /* Main.storyboard in Resources */,
 				FFB8134520D3905000A51083 /* Detail.storyboard in Resources */,
@@ -519,6 +542,7 @@
 			files = (
 				CED9E9B820D96BFA00B261BF /* NetworkDelegate.swift in Sources */,
 				52C972B120D4D8010000988E /* SpeechNM.swift in Sources */,
+				CE18F23520DC0D100016EC8E /* Article.swift in Sources */,
 				CED9E9C220D9723200B261BF /* MainViewController+UIGestureRecognizerDelegate.swift in Sources */,
 				CE89B15120D4BE7700619841 /* RecommendViewController+UICollectionViewDataSource.swift in Sources */,
 				CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */,
@@ -529,6 +553,7 @@
 				521B80DB20C90489003F8833 /* RecommendViewController.swift in Sources */,
 				CED9E9BE20D9710400B261BF /* Collection+Extension.swift in Sources */,
 				CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */,
+				CE18F23320DC0A2D0016EC8E /* ArticleCollectionViewCell.swift in Sources */,
 				CE35BBC920D650000068C189 /* Mountain.swift in Sources */,
 				CE35BBC520D64BED0068C189 /* DetailListCell.swift in Sources */,
 				CED9E9A920D810DB00B261BF /* GetWGSNM.swift in Sources */,
@@ -546,12 +571,14 @@
 				52AA2F4420C417E300BE1D31 /* CVCollectionViewCell.swift in Sources */,
 				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
+				CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */,
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,
 				52C972B320D4D8A20000988E /* SpeechVO.swift in Sources */,
 				CE35BBC720D64C950068C189 /* DetailListViewController+UITableViewDelegate.swift in Sources */,
 				CE35BBD120D695090068C189 /* DetailMountainViewController+UICollectionViewDelegate.swift in Sources */,
+				CE962DB220DC235300B5A831 /* Education.swift in Sources */,
 				521B80DD20C938E2003F8833 /* MainViewController.swift in Sources */,
 				CED9E9C020D9717C00B261BF /* MainViewController+SFSpeechRecognizerDelegate.swift in Sources */,
 				52C972B620D4E4E50000988E /* SpeachStringresult.swift in Sources */,
@@ -559,6 +586,7 @@
 				CE35BBCD20D68F1A0068C189 /* DetailDescriptionReusableView.swift in Sources */,
 				FFB8134B20D3FC1F00A51083 /* DetailMountainViewController.swift in Sources */,
 				52F6D61B20C0210A00245C07 /* AppDelegate.swift in Sources */,
+				CE18F23920DC1DD60016EC8E /* Date+Extension.swift in Sources */,
 				CED9E9C420D97AA400B261BF /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

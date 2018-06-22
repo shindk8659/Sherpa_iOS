@@ -26,7 +26,7 @@ class DetailDescriptionReusableView: UICollectionReusableView {
     var mountainModel: Mountain? {
         didSet {
             if let url = URL(string: "http://" + (mountainModel?.imageURL ?? "")) {
-                mountainImageView.kf.setImage(with: url)
+                mountainImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "mountainDefaultB"))
             }
             mountainNameLabel.text = mountainModel?.name
             mountainHeightLabel.text = "\(mountainModel?.height ?? 0)m"

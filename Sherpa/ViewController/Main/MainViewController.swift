@@ -53,6 +53,18 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
     var tabley :CGFloat = 0.0
     var isListening: Bool = false
     
+    var model = [[ModelTransformable]]() {
+        didSet {
+            tableview.reloadData()
+        }
+    }
+    
+    var category = [Category?]()
+    var questions = [String?]() {
+        didSet {
+            tableview.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -140,12 +152,20 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
                     }
                     if self.micStringLB.text != "듣고있어요 :)" && self.micStringLB.text != "" {
                         let speechNetwork = SpeechNM()
+                        self.questions.append(self.micStringLB.text)
                         speechNetwork.sendSpeech(string: self.micStringLB.text ?? "") { category, model, error in
                             guard error == nil else {
+                                self.category.append(.none)
+                                self.model.append([])
                                 return
                             }
-                            print(model)
-                            print(model as? [Mountain])
+                            guard let model = model, let category = category else {
+                                self.category.append(.none)
+                                self.model.append([])
+                                return
+                            }
+                            self.category.append(category)
+                            self.model.append(model)
                         }
                     }
                     timer.invalidate()
@@ -174,7 +194,7 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         
         do {
             try audioEngine.start()
-            micStringLB.text = "듣고있습니다:)"
+            micStringLB.text = "듣고있어요 :)"
         } catch {
             print("오디오엔진 시작을 실패했습니다.")
         }
@@ -196,7 +216,6 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         UIView.animate(withDuration: 0.2, animations: { [weak self] in
             self?.tableview.frame.origin.y = 0
         }, completion: nil)
-        
         
         navigationController?.setNavigationBarHidden(false, animated: true)
         setTabBarHidden(false)

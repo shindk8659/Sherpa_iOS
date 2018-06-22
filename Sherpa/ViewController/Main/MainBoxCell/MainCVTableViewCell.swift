@@ -14,32 +14,58 @@ class MainCVTableViewCell: UITableViewCell {
     
     @IBOutlet weak var orderCV: UICollectionView!
     @IBOutlet weak var voiceRecodeLB: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-    var didSelectCollectionView: (() -> Void)?
+    var model = [ModelTransformable]() {
+        didSet {
+            orderCV.reloadData()
+        }
+    }
+    
+    var category: Category?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         orderCV.delegate = self
         orderCV.dataSource = self
+        
+        orderCV.register(UINib(nibName: "ArticleCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
+        orderCV.register(UINib(nibName: "EducationCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "EducationCollectionViewCell")
     }
 }
 
-extension MainCVTableViewCell : UICollectionViewDelegateFlowLayout{
+extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 170, height: 240)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
+    }
+}
+
+extension MainCVTableViewCell: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelectCollectionView?()
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewModelRepresentable
+        cell.didSelectedAction()
     }
 }
 
-extension MainCVTableViewCell: UICollectionViewDataSource{
+extension MainCVTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return model.count > 5 ? 5 : model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BoxCell", for: indexPath) as! CVCollectionViewCell
-        cell.backgroundColor = UIColor.blue
-        cell.row.text = String(indexPath.row)
-        return cell
+        let identifier = category?.cellIdentifier ?? ""
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionViewModelRepresentable
+        cell.model = model[indexPath.item]
+        return cell as! UICollectionViewCell
     }
 }
 
