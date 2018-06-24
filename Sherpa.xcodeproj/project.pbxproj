@@ -45,6 +45,8 @@
 		CE89B15520D4C02200619841 /* RecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15420D4C02200619841 /* RecommendCell.swift */; };
 		CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15620D4C0FF00619841 /* RecommendModel.swift */; };
 		CE89B15920D4C8E300619841 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */; };
+		CE8E4F6420DF4E7900F4964E /* MountainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E4F6320DF4E7900F4964E /* MountainCell.xib */; };
+		CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */; };
 		CE962DB220DC235300B5A831 /* Education.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE962DB120DC235300B5A831 /* Education.swift */; };
 		CED9E9A420D810B000B261BF /* SGISVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A220D810B000B261BF /* SGISVO.swift */; };
 		CED9E9A520D810B000B261BF /* WGSVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9E9A320D810B000B261BF /* WGSVO.swift */; };
@@ -107,6 +109,8 @@
 		CE89B15420D4C02200619841 /* RecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCell.swift; sourceTree = "<group>"; };
 		CE89B15620D4C0FF00619841 /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		CE89B15820D4C8E300619841 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CE8E4F6320DF4E7900F4964E /* MountainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MountainCell.xib; sourceTree = "<group>"; };
+		CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCell.swift; sourceTree = "<group>"; };
 		CE962DB120DC235300B5A831 /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		CED9E9A220D810B000B261BF /* SGISVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGISVO.swift; sourceTree = "<group>"; };
 		CED9E9A320D810B000B261BF /* WGSVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGSVO.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				CED9E9B020D9615D00B261BF /* Map.storyboard */,
 				CE18F22C20DC0A130016EC8E /* ArticleCollectionViewCell.xib */,
 				CE18F22D20DC0A130016EC8E /* EducationCollectionViewCell.xib */,
+				CE8E4F6320DF4E7900F4964E /* MountainCell.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				CE18F23020DC0A2D0016EC8E /* EducationCollectionViewCell.swift */,
 				52AA2F4120C4170700BE1D31 /* MainCVTableViewCell.swift */,
 				52AA2F4320C417E300BE1D31 /* CVCollectionViewCell.swift */,
+				CE8E4F6520DF4ECE00F4964E /* MountainCell.swift */,
 			);
 			path = MainBoxCell;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F6D62520C0210C00245C07 /* LaunchScreen.storyboard in Resources */,
+				CE8E4F6420DF4E7900F4964E /* MountainCell.xib in Resources */,
 				CE18F22E20DC0A130016EC8E /* ArticleCollectionViewCell.xib in Resources */,
 				CE30782120D4BD6800BDE64F /* Recommend.storyboard in Resources */,
 				CE18F22F20DC0A130016EC8E /* EducationCollectionViewCell.xib in Resources */,
@@ -572,6 +579,7 @@
 				CE35BBD720D696490068C189 /* NetworkRequestor.swift in Sources */,
 				CE89B15720D4C0FF00619841 /* RecommendModel.swift in Sources */,
 				CE18F23220DC0A2D0016EC8E /* EducationCollectionViewCell.swift in Sources */,
+				CE8E4F6620DF4ECE00F4964E /* MountainCell.swift in Sources */,
 				CED9E9BC20D96DE700B261BF /* MainViewController+UITableViewDataSource.swift in Sources */,
 				52E0CD7C20C67F00000B8489 /* InfoViewController.swift in Sources */,
 				CED9E9A820D810DB00B261BF /* SGISNM.swift in Sources */,

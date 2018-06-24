@@ -279,26 +279,20 @@
                         <outlet property="micStringLB" destination="EGh-p2-hpP" id="mXl-SF-7vs"/>
                         <outlet property="recommendLabel" destination="UmN-Te-Xrn" id="2bW-lw-exc"/>
                         <outlet property="tableview" destination="2ey-bM-CJp" id="rpx-5y-2aX"/>
+                        <segue destination="M0g-gg-qHv" kind="show" identifier="DetailMountainViewController" id="rnL-nu-hIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMz-0a-5OM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2016.8" y="120.98950524737631"/>
         </scene>
-        <!--Info View Controller-->
-        <scene sceneID="rH7-py-nHc">
+        <!--DetailMountainViewController-->
+        <scene sceneID="fVN-u3-Rbg">
             <objects>
-                <viewController storyboardIdentifier="Infomation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I6k-kE-oVv" customClass="InfoViewController" customModule="Sherpa" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jp3-BH-OcP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="s0Z-1M-oKP"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8vF-tc-tTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Detail" referencedIdentifier="DetailMountainViewController" id="M0g-gg-qHv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="39H-Iy-PEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2727" y="121"/>
+            <point key="canvasLocation" x="2616" y="120"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="F2J-9S-6pb">

@@ -107,6 +107,14 @@ class MainViewController: UIViewController, NVActivityIndicatorViewable {
         tableview.addGestureRecognizer(tvGesture)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == DetailMountainViewController.identifier {
+            let destination = segue.destination as! DetailMountainViewController
+            destination.mountain = sender as? Mountain
+        }
+    }
+    
     //Realm 데이터 저장
     func addspeechData(string: String){
         

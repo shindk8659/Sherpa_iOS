@@ -36,6 +36,9 @@ extension MainViewController: UITableViewDataSource {
             cell.category = category[indexPath.row]
             cell.indicator.stopAnimating()
             cell.indicator.isHidden = true
+            cell.didSelectMountainCell = { [weak self] model in
+                self?.performSegue(withIdentifier: DetailMountainViewController.identifier, sender: model)
+            }
         }
         
         return cell

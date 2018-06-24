@@ -22,6 +22,8 @@ class MainCVTableViewCell: UITableViewCell {
         }
     }
     
+    var didSelectMountainCell: ((ModelTransformable?) -> Void)?
+    
     var category: Category?
     
     override func awakeFromNib() {
@@ -31,12 +33,21 @@ class MainCVTableViewCell: UITableViewCell {
         
         orderCV.register(UINib(nibName: "ArticleCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
         orderCV.register(UINib(nibName: "EducationCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "EducationCollectionViewCell")
+        orderCV.register(UINib(nibName: "MountainCell", bundle: .main), forCellWithReuseIdentifier: "MountainCell")
     }
 }
 
 extension MainCVTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 170, height: 240)
+        guard let category = category else {
+            return .zero
+        }
+        switch category {
+        case .education, .news, .mountain:
+            return CGSize(width: 170, height: 240)
+        default:
+            return .zero
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -53,6 +64,9 @@ extension MainCVTableViewCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewModelRepresentable
         cell.didSelectedAction()
+        if cell.model is Mountain {
+            didSelectMountainCell?(cell.model)
+        }
     }
 }
 
@@ -62,7 +76,9 @@ extension MainCVTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = category?.cellIdentifier ?? ""
+        guard let identifier = category?.cellIdentifier, identifier.isNotEmpty else {
+            return UICollectionViewCell()
+        }
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionViewModelRepresentable
         cell.model = model[indexPath.item]
         return cell as! UICollectionViewCell

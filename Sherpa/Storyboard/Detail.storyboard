@@ -203,7 +203,7 @@
         <!--Detail Mountain View Controller-->
         <scene sceneID="TCg-gi-Y6g">
             <objects>
-                <viewController id="RVy-ey-vZZ" customClass="DetailMountainViewController" customModule="Sherpa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailMountainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RVy-ey-vZZ" customClass="DetailMountainViewController" customModule="Sherpa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F0S-yX-X72">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

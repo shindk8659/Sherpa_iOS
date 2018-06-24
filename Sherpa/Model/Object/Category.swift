@@ -24,6 +24,7 @@ enum Category: String {
         switch self {
         case .education: return "EducationCollectionViewCell"
         case .news: return "ArticleCollectionViewCell"
+        case .mountain: return "MountainCell"
         default: return ""
         }
     }

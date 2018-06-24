@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval3" translatesAutoresizingMaskIntoConstraints="NO" id="Dxi-EQ-1th">
+                                <rect key="frame" x="55" y="274" width="264" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="3mF-oa-pTv"/>
+                                    <constraint firstAttribute="width" constant="264" id="ijk-jP-Dct"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="RLt-Yu-gZo">
                                 <rect key="frame" x="103" y="350" width="168" height="111"/>
                                 <constraints>
@@ -25,8 +32,10 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.44705882349999998" green="0.92549019610000005" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Dxi-EQ-1th" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="0z4-Cl-fqP"/>
+                            <constraint firstItem="Dxi-EQ-1th" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BN4-t4-TkZ"/>
                             <constraint firstItem="RLt-Yu-gZo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nhj-dQ-gFM"/>
                             <constraint firstItem="RLt-Yu-gZo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ulv-eE-kbi"/>
                         </constraints>
@@ -40,5 +49,6 @@
     </scenes>
     <resources>
         <image name="launchLogo" width="168" height="111"/>
+        <image name="oval3" width="264" height="264"/>
     </resources>
 </document>
